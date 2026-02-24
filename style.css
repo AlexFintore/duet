@@ -284,3 +284,46 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   color: var(--accent); transition: color 0.2s;
 }
 .news-link:hover { color: var(--accent-hover); }
+
+/* ===== GEO ===== */
+.geo-wrap {
+  display: flex; gap: 40px; align-items: center;
+  max-width: 720px; margin: 0 auto;
+}
+.geo-icon {
+  flex-shrink: 0; width: 80px; height: 80px;
+  background: rgba(201,169,110,0.12); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent);
+}
+.geo-wrap h2 { margin-bottom: 12px; }
+.geo-wrap p { color: var(--text-muted); }
+
+/* ===== CONTACTS ===== */
+.contacts-wrap { text-align: center; max-width: 640px; margin: 0 auto; }
+.contacts-wrap h2 { margin-bottom: 16px; }
+.contacts-sub { color: var(--text-muted); margin-bottom: 40px; line-height: 1.8; }
+.contacts-actions {
+  display: flex; gap: 16px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 48px;
+}
+.contacts-links {
+  display: flex; gap: 32px; justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.9rem; color: var(--text-muted);
+  transition: color 0.2s;
+}
+.contact-item:hover { color: var(--accent); }
+
+/* ===== FOOTER ===== */
+#footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+}
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center;
+}
+#footer p { font-size: 0.8rem; color: var(--text-muted); }
