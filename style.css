@@ -226,12 +226,45 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
 
 /* ===== PLAYER ===== */
 .player-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display: flex; flex-direction: column;
+  gap: 12px;
+  max-width: 720px; margin: 0 auto;
 }
-.player-item {
-  border-radius: 16px; overflow: hidden;
-  box-shadow: 0 4px 20px var(--shadow);
+.track-card {
+  display: flex; align-items: center; gap: 20px;
+  background: var(--bg-card); border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 16px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.track-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+.track-num {
+  font-family: var(--font-heading);
+  font-size: 1.6rem; line-height: 1;
+  color: var(--accent); opacity: 0.5;
+  min-width: 36px;
+}
+.track-info { flex: 1; }
+.track-title {
+  display: block;
+  font-size: 1rem; font-weight: 600;
+  color: var(--text); margin-bottom: 4px;
+}
+.track-meta { font-size: 0.8rem; color: var(--text-muted); }
+.track-play {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  background: var(--accent); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  transition: background 0.2s, transform 0.2s;
+}
+.track-card:hover .track-play {
+  background: var(--accent-hover);
+  transform: scale(1.1);
 }
 
 /* ===== VIDEO ===== */
@@ -388,7 +421,6 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   .format-card { padding: 28px 20px; }
 
   .video-grid { grid-template-columns: 1fr; }
-  .player-grid { grid-template-columns: 1fr; }
 
   .news-grid { grid-template-columns: 1fr; }
   .news-card--featured { grid-column: auto; }
