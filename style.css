@@ -166,3 +166,31 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(8px); }
 }
+
+/* ===== ABOUT ===== */
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.about-photo { position: relative; }
+.photo-placeholder {
+  aspect-ratio: 3/4; background: var(--border);
+  border-radius: 8px; display: flex; align-items: center;
+  justify-content: center; color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.about-photo img { border-radius: 8px; width: 100%; }
+.about-label {
+  font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin-bottom: 12px;
+}
+.about-text h2 { margin-bottom: 24px; }
+.about-text p { color: var(--text-muted); margin-bottom: 16px; }
+.about-text p strong { color: var(--text); }
+.about-tags {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px;
+}
+.about-tags span {
+  padding: 6px 16px; border: 1px solid var(--border);
+  border-radius: 100px; font-size: 0.8rem; color: var(--text-muted);
+}
