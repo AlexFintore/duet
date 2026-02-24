@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Дуэт «Отображение» — музыкальный дуэт из Нижнего Новгорода</title>
   <meta name="description" content="Музыкальный дуэт Сергея Зорина и Рамили Минажетдиновой. Поп, рок, шансон. Корпоративы, свадьбы, фестивали по всей России.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Дуэт «Отображение» — музыкальный дуэт из Нижнего Новгорода">
+  <meta property="og:description" content="Корпоративы, свадьбы, фестивали. Поп, рок, шансон. Участники шоу «Привет, Андрей!» на Россия-1.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +20,9 @@
 
   <!-- HEADER -->
   <header id="header">
-  <nav class="nav container">
+  <nav class="nav container" aria-label="Основная навигация">
     <a href="#hero" class="nav-logo">Отображение</a>
-    <button class="nav-burger" id="navBurger" aria-label="Меню">
+    <button class="nav-burger" id="navBurger" aria-label="Меню" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
@@ -84,7 +89,7 @@
 </section>
 
   <!-- FORMATS -->
-  <section id="formats" class="section" style="background: #F3EDE4;">
+  <section id="formats" class="section section--alt">
   <div class="container">
     <div class="section-title fade-in">
       <h2>Форматы выступлений</h2>
@@ -151,18 +156,18 @@
       <span></span>
     </div>
     <div class="player-wrap fade-in">
+      <!-- ПЛЕЕР VK: когда получишь embed-код, раскомментируй iframe ниже и удели этот комментарий -->
+      <!-- <iframe src="https://vk.com/widget_music_player.php?app_id=XXXXX&song_ids=XXXXX" width="100%" height="120" frameborder="0" allowfullscreen></iframe> -->
       <div class="player-placeholder">
-        <p>Плеер ВКонтакте</p>
-        <p class="player-hint">Вставьте iframe embed-код из ВКонтакте (vk.com/duet_otobrajenie → Музыка → трек → Поделиться → Код для вставки)</p>
-        <!-- ПРИМЕР (заменить на реальный embed): -->
-        <!-- <iframe src="https://vk.com/widget_music_player.php?app_id=XXXXX&song_ids=XXXXX" width="100%" height="120" frameborder="0" allowfullscreen></iframe> -->
+        <p>Скоро здесь появится плеер</p>
+        <p class="player-hint">Следите за обновлениями в наших социальных сетях</p>
       </div>
     </div>
   </div>
 </section>
 
   <!-- VIDEO -->
-  <section id="video" class="section" style="background: #F3EDE4;">
+  <section id="video" class="section section--alt">
   <div class="container">
     <div class="section-title fade-in">
       <h2>Смотрите нас в деле</h2>
@@ -206,7 +211,7 @@
 
       <article class="news-card news-card--featured fade-in">
         <div class="news-badge">Скоро</div>
-        <time class="news-date">2025</time>
+        <time class="news-date" datetime="2025">2025</time>
         <h3>Новый летний трек</h3>
         <p>Дуэт «Отображение» анонсировал выход нового летнего трека. Следите за обновлениями в наших социальных сетях — премьера совсем скоро!</p>
         <a href="https://vk.com/duet_otobrajenie" target="_blank" rel="noopener" class="news-link">
@@ -215,13 +220,13 @@
       </article>
 
       <article class="news-card fade-in">
-        <time class="news-date">Декабрь 2023</time>
+        <time class="news-date" datetime="2023-12">Декабрь 2023</time>
         <h3>Премьера «Любовь приходит не одна»</h3>
         <p>Состоялась премьера авторской песни дуэта. Музыка — Ян Марти, слова — Сергей Зорин. Романтичное позитивное звучание в фирменном стиле «Отображения».</p>
       </article>
 
       <article class="news-card fade-in">
-        <time class="news-date">2023</time>
+        <time class="news-date" datetime="2023">2023</time>
         <h3>Выступление на Россия-1</h3>
         <p>Дуэт принял участие в телешоу «Привет, Андрей!» на федеральном канале Россия-1 — с лирической композицией «Незаконченный роман».</p>
       </article>
@@ -231,7 +236,7 @@
 </section>
 
   <!-- GEO -->
-  <section id="geo" class="section" style="background: #F3EDE4;">
+  <section id="geo" class="section section--alt">
   <div class="container">
     <div class="geo-wrap fade-in">
       <div class="geo-icon">
