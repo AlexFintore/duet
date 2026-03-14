@@ -204,35 +204,128 @@ document.querySelectorAll('.news-grid .news-card').forEach((card, i) => {
 
 // ===== REPERTOIRE =====
 const REPERTOIRE = [
-  { title: 'Пожелайте бывшим счастья', genre: 'own', tag: 'Авторская' },
-  { title: 'Танцы в ночи',             genre: 'own', tag: 'Авторская' },
-  { title: 'Любовь приходит не одна',  genre: 'own', tag: 'Авторская' },
-  { title: 'Бригантина любви',         genre: 'own', tag: 'Авторская' },
-  { title: 'Незаконченный роман',      genre: 'own', tag: 'Авторская' },
-  { title: 'Заходи ко мне во сне',     genre: 'own', tag: 'Авторская' },
-  // Поп
-  { title: 'Ты моя нежность',          genre: 'pop', tag: 'Поп' },
-  { title: 'Опять метель',             genre: 'pop', tag: 'Поп' },
-  { title: 'Два билета на самолёт',    genre: 'pop', tag: 'Поп' },
-  { title: 'Белая ночь',               genre: 'pop', tag: 'Поп' },
-  { title: 'Снег кружится',            genre: 'pop', tag: 'Поп' },
-  { title: 'Лучшее только начинается', genre: 'pop', tag: 'Поп' },
-  { title: 'Всё только начинается',    genre: 'pop', tag: 'Поп' },
-  { title: 'Нам не жить друг без друга', genre: 'pop', tag: 'Поп' },
-  // Рок
-  { title: 'Группа крови',             genre: 'rock', tag: 'Рок' },
-  { title: 'Звезда по имени Солнце',   genre: 'rock', tag: 'Рок' },
-  { title: 'В последний раз',          genre: 'rock', tag: 'Рок' },
-  { title: 'Мой рок-н-ролл',          genre: 'rock', tag: 'Рок' },
-  { title: 'Нежность',                 genre: 'rock', tag: 'Рок' },
-  { title: 'Осень',                    genre: 'rock', tag: 'Рок' },
-  // Шансон
-  { title: 'Первый тост',              genre: 'shanson', tag: 'Шансон' },
-  { title: 'Я куплю тебе дом',         genre: 'shanson', tag: 'Шансон' },
-  { title: 'Ты целуй меня',            genre: 'shanson', tag: 'Шансон' },
-  { title: 'Гуляй душа',              genre: 'shanson', tag: 'Шансон' },
-  { title: 'На теплоходе музыка играет', genre: 'shanson', tag: 'Шансон' },
-  { title: 'Не для меня',              genre: 'shanson', tag: 'Шансон' },
+  // === АВТОРСКИЕ ===
+  { title: 'Пожелайте бывшим счастья',       genre: 'own', tag: 'Дуэт' },
+  { title: 'Любовь приходит не одна',         genre: 'own', tag: 'Дуэт' },
+  { title: 'Бригантина любви',               genre: 'own', tag: 'Дуэт' },
+  { title: 'Танцы в ночи',                   genre: 'own', tag: 'Дуэт' },
+  { title: 'Дети войны',                     genre: 'own', tag: 'Сергей' },
+  { title: 'Скажи мне',                      genre: 'own', tag: 'Сергей' },
+
+  // === ПОП · ДУЭТ ===
+  { title: 'Песенка о медведях',             genre: 'pop', tag: 'Дуэт' },
+  { title: 'Безответно',                     genre: 'pop', tag: 'Дуэт' },
+  { title: 'Незаконченный роман',            genre: 'pop', tag: 'Дуэт' },
+  { title: 'Счастье',                        genre: 'pop', tag: 'Дуэт' },
+  { title: 'Счастье (новогодняя)',           genre: 'pop', tag: 'Дуэт' },
+  { title: 'За тебя',                        genre: 'pop', tag: 'Дуэт' },
+
+  // === ПОП · СЕРГЕЙ ===
+  { title: 'Девочка моя',                    genre: 'pop', tag: 'Сергей' },
+  { title: 'Как долго я тебя искал',         genre: 'pop', tag: 'Сергей' },
+  { title: '7000 над землёй',               genre: 'pop', tag: 'Сергей' },
+  { title: 'Большая Медведица',             genre: 'pop', tag: 'Сергей' },
+
+  // === ПОП · РАМИЛЯ ===
+  { title: 'Любимый человек',               genre: 'pop', tag: 'Рамиля' },
+  { title: 'Уфтанма',                       genre: 'pop', tag: 'Рамиля' },
+  { title: 'Лирика',                        genre: 'pop', tag: 'Рамиля' },
+  { title: 'Одно и то же',                  genre: 'pop', tag: 'Рамиля' },
+  { title: 'Белые цветы',                   genre: 'pop', tag: 'Рамиля' },
+  { title: 'Credo',                         genre: 'pop', tag: 'Рамиля' },
+  { title: 'ЯТЛ',                           genre: 'pop', tag: 'Рамиля' },
+  { title: 'Звёздное лето',                 genre: 'pop', tag: 'Рамиля' },
+  { title: 'Миллион алых роз',              genre: 'pop', tag: 'Рамиля' },
+  { title: 'Зимний сон',                    genre: 'pop', tag: 'Рамиля' },
+  { title: 'Милэшлэрем',                    genre: 'pop', tag: 'Рамиля' },
+  { title: 'Не жди меня',                   genre: 'pop', tag: 'Рамиля' },
+  { title: 'Так же как все',                genre: 'pop', tag: 'Рамиля' },
+  { title: 'Попытка №5',                    genre: 'pop', tag: 'Рамиля' },
+  { title: 'Задержи',                       genre: 'pop', tag: 'Рамиля' },
+  { title: 'Солнце',                        genre: 'pop', tag: 'Рамиля' },
+  { title: 'Ягода-малина',                  genre: 'pop', tag: 'Рамиля' },
+  { title: 'С днём рождения',               genre: 'pop', tag: 'Рамиля' },
+  { title: 'Угонщица',                      genre: 'pop', tag: 'Рамиля' },
+  { title: 'Бессовестно счастливая',        genre: 'pop', tag: 'Рамиля' },
+  { title: 'Брутальный мужчина',            genre: 'pop', tag: 'Рамиля' },
+  { title: 'Всё в твоих руках',             genre: 'pop', tag: 'Рамиля' },
+  { title: 'Я тебя люблю',                  genre: 'pop', tag: 'Рамиля' },
+  { title: 'Музыка нас связала',            genre: 'pop', tag: 'Рамиля' },
+  { title: 'Ветер с моря дул',              genre: 'pop', tag: 'Рамиля' },
+  { title: 'Полюби меня такой',             genre: 'pop', tag: 'Рамиля' },
+  { title: 'Черная смородина',              genre: 'pop', tag: 'Рамиля' },
+  { title: 'Я у твоих ног',                 genre: 'pop', tag: 'Рамиля' },
+  { title: 'Жёлтые тюльпаны',              genre: 'pop', tag: 'Рамиля' },
+  { title: 'Синие лебеди',                  genre: 'pop', tag: 'Рамиля' },
+  { title: 'Чуть-чуть не считается',        genre: 'pop', tag: 'Рамиля' },
+  { title: 'Каждая женщина хочет',          genre: 'pop', tag: 'Рамиля' },
+  { title: 'Отображение',                   genre: 'pop', tag: 'Рамиля' },
+  { title: 'На теплоходе музыка играет',    genre: 'pop', tag: 'Рамиля' },
+  { title: 'Снежинка',                      genre: 'pop', tag: 'Рамиля' },
+  { title: 'Подруга',                       genre: 'pop', tag: 'Рамиля' },
+  { title: 'Белая черёмуха',               genre: 'pop', tag: 'Рамиля' },
+  { title: 'Жили-были',                     genre: 'pop', tag: 'Рамиля' },
+  { title: 'Матушка-Земля',                 genre: 'pop', tag: 'Рамиля' },
+  { title: 'Странник',                      genre: 'pop', tag: 'Рамиля' },
+
+  // === РОК · СЕРГЕЙ ===
+  { title: 'Cristmas',                      genre: 'rock', tag: 'Сергей' },
+  { title: 'Компромисс',                    genre: 'rock', tag: 'Сергей' },
+  { title: 'Лайки',                         genre: 'rock', tag: 'Сергей' },
+  { title: 'Скользкие улицы',               genre: 'rock', tag: 'Сергей' },
+  { title: 'Ветер знает',                   genre: 'rock', tag: 'Сергей' },
+  { title: 'Жар-птица',                     genre: 'rock', tag: 'Сергей' },
+  { title: 'Этот город',                    genre: 'rock', tag: 'Сергей' },
+  { title: 'Это за окном рассвет',          genre: 'rock', tag: 'Сергей' },
+  { title: 'Первый снег',                   genre: 'rock', tag: 'Сергей' },
+  { title: 'Диктофоны',                     genre: 'rock', tag: 'Сергей' },
+  { title: 'Половинка',                     genre: 'rock', tag: 'Сергей' },
+  { title: 'Цветут цветы',                  genre: 'rock', tag: 'Сергей' },
+  { title: 'Город',                         genre: 'rock', tag: 'Сергей' },
+
+  // === РОК · РАМИЛЯ ===
+  { title: 'Танкист',                       genre: 'rock', tag: 'Рамиля' },
+
+  // === ШАНСОН · ДУЭТ ===
+  { title: 'В сердце твоём',               genre: 'shanson', tag: 'Дуэт' },
+  { title: 'Как будто мы с тобой',          genre: 'shanson', tag: 'Дуэт' },
+  { title: 'Любимый взгляд',               genre: 'shanson', tag: 'Дуэт' },
+  { title: 'Привет, малыш',                genre: 'shanson', tag: 'Дуэт' },
+  { title: 'Заходи ко мне во сне',          genre: 'shanson', tag: 'Дуэт' },
+  { title: 'Тебе моя последняя любовь',    genre: 'shanson', tag: 'Дуэт' },
+
+  // === ШАНСОН · СЕРГЕЙ ===
+  { title: 'А мы не ангелы, парень',       genre: 'shanson', tag: 'Сергей' },
+  { title: 'Одинокая волчица',              genre: 'shanson', tag: 'Сергей' },
+  { title: 'Владимирский централ',          genre: 'shanson', tag: 'Сергей' },
+  { title: 'Мой Бог',                       genre: 'shanson', tag: 'Сергей' },
+  { title: 'Мышка',                         genre: 'shanson', tag: 'Сергей' },
+  { title: 'Падал снег',                    genre: 'shanson', tag: 'Сергей' },
+  { title: 'Марджанджа',                    genre: 'shanson', tag: 'Сергей' },
+  { title: 'Марджанджа (ремикс)',           genre: 'shanson', tag: 'Сергей' },
+  { title: 'Пальма-де-Майорка',            genre: 'shanson', tag: 'Сергей' },
+  { title: 'Ветер в голове',               genre: 'shanson', tag: 'Сергей' },
+  { title: 'Московская',                    genre: 'shanson', tag: 'Сергей' },
+  { title: 'Сочи',                          genre: 'shanson', tag: 'Сергей' },
+  { title: 'Снегири',                       genre: 'shanson', tag: 'Сергей' },
+  { title: 'Осколки',                       genre: 'shanson', tag: 'Сергей' },
+
+  // === ШАНСОН · РАМИЛЯ ===
+  { title: 'Желаю',                         genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Курю',                          genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Девочка',                       genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Бокал Бакарди',               genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Ветер',                         genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Дом на горе',                   genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Ищи не ищи',                   genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Я прочитаю в глазах твоих',    genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Младший лейтенант',             genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Не жалей',                      genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Гитара',                        genre: 'shanson', tag: 'Рамиля' },
+  { title: 'К единственному нежному',       genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Мы с тобою похожи',            genre: 'shanson', tag: 'Рамиля' },
+  { title: 'Небо',                          genre: 'shanson', tag: 'Рамиля' },
+  { title: 'По полюшку',                   genre: 'shanson', tag: 'Рамиля' },
 ];
 
 const repGrid = document.getElementById('repertoireGrid');
@@ -243,7 +336,7 @@ if (repGrid) {
       const div = document.createElement('div');
       div.className = 'rep-item fade-in';
       div.dataset.genre = song.genre;
-      div.innerHTML = `<span class="rep-dot rep-dot--${song.genre}"></span><span class="rep-title">${song.title}</span><span class="rep-tag">${song.tag}</span>`;
+      div.innerHTML = `<span class="rep-dot rep-dot--${song.genre}"></span><span class="rep-title">${song.title}</span><span class="rep-tag" data-who="${song.tag}">${song.tag}</span>`;
       repGrid.appendChild(div);
     });
     // re-observe new fade-in elements

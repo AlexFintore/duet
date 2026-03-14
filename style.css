@@ -1151,6 +1151,11 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   padding: 2px 7px; flex-shrink: 0; white-space: nowrap;
 }
 .rep-item[data-genre="own"] .rep-tag { background: var(--accent-light); color: var(--accent); }
+.rep-tag[data-who="Дуэт"]   { background: rgba(201,169,110,0.12); color: var(--accent); }
+.rep-tag[data-who="Сергей"] { background: rgba(121,134,203,0.12); color: #5c6bc0; }
+.rep-tag[data-who="Рамиля"] { background: rgba(229,115,115,0.12); color: #c0545c; }
+[data-theme="dark"] .rep-tag[data-who="Сергей"] { color: #9fa8da; background: rgba(121,134,203,0.15); }
+[data-theme="dark"] .rep-tag[data-who="Рамиля"] { color: #ef9a9a; background: rgba(229,115,115,0.15); }
 .repertoire-note {
   text-align: center; color: var(--text-muted);
   font-family: var(--font-accent); font-style: italic; font-size: 1rem;
