@@ -84,18 +84,38 @@ document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
   window.open(`https://wa.me/79307001530?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
 });
 
-// ===== VIDEO CLICK-TO-EMBED =====
+// ===== VIDEO MODAL =====
+const videoModal   = document.getElementById('videoModal');
+const videoModalWrap = document.getElementById('videoModalWrap');
+
+function openVideoModal(embedUrl) {
+  videoModalWrap.innerHTML = `<iframe src="${embedUrl}" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+  videoModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeVideoModal() {
+  videoModal.classList.remove('active');
+  document.body.style.overflow = '';
+  setTimeout(() => { if (videoModalWrap) videoModalWrap.innerHTML = ''; }, 300);
+}
+
+document.getElementById('videoModalClose')?.addEventListener('click', closeVideoModal);
+document.getElementById('videoModalOverlay')?.addEventListener('click', closeVideoModal);
+
 document.querySelectorAll('.video-thumb').forEach(card => {
-  card.addEventListener('click', function handler(e) {
+  card.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
     const ytMatch = href.match(/youtube\.com\/watch\?v=([^&]+)/);
-    if (!ytMatch) return; // non-YouTube: default behavior (open in new tab)
+    if (!ytMatch) return;
     e.preventDefault();
-    const wrap = this.querySelector('.video-wrap');
-    wrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
-    this.removeEventListener('click', handler);
-    this.style.cursor = 'default';
+    openVideoModal(`https://www.youtube.com/embed/${ytMatch[1]}?autoplay=1&rel=0`);
   });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (videoModal?.classList.contains('active')) closeVideoModal();
+  }
 });
 
 // ===== GALLERY =====

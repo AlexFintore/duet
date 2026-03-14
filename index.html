@@ -345,7 +345,7 @@
       </a>
       <a class="video-card video-thumb fade-in" href="https://www.youtube.com/watch?v=95rEzI1gNL0" target="_blank" rel="noopener" aria-label="Смотреть интервью дуэта Отображение">
         <div class="video-wrap">
-          <img src="https://img.youtube.com/vi/95rEzI1gNL0/maxresdefault.jpg" alt="Дуэт Отображение — интервью" loading="lazy">
+          <img src="https://img.youtube.com/vi/95rEzI1gNL0/hqdefault.jpg" alt="Дуэт Отображение — интервью" loading="lazy" onerror="this.src='https://img.youtube.com/vi/95rEzI1gNL0/mqdefault.jpg'">
           <div class="video-play">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </div>
@@ -553,6 +553,15 @@
     </div>
   </div>
 </section>
+
+  <!-- VIDEO MODAL -->
+  <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Просмотр видео">
+    <div class="video-modal-overlay" id="videoModalOverlay"></div>
+    <button class="video-modal-close" id="videoModalClose" aria-label="Закрыть">✕</button>
+    <div class="video-modal-content">
+      <div class="video-modal-wrap" id="videoModalWrap"></div>
+    </div>
+  </div>
 
   <!-- PHOTO MODAL -->
   <div id="photoModal" class="photo-modal" role="dialog" aria-modal="true" aria-label="Просмотр фотографии">
