@@ -336,7 +336,8 @@ if (repGrid) {
       const div = document.createElement('div');
       div.className = 'rep-item fade-in';
       div.dataset.genre = song.genre;
-      div.innerHTML = `<span class="rep-dot rep-dot--${song.genre}"></span><span class="rep-title">${song.title}</span><span class="rep-tag" data-who="${song.tag}">${song.tag}</span>`;
+      const genreLabel = { own: 'Авторская', pop: 'Поп', rock: 'Рок', shanson: 'Шансон' }[song.genre];
+      div.innerHTML = `<span class="rep-dot rep-dot--${song.genre}"></span><span class="rep-body"><span class="rep-title">${song.title}</span><span class="rep-genre">${genreLabel}</span></span><span class="rep-tag" data-who="${song.tag}">${song.tag}</span>`;
       repGrid.appendChild(div);
     });
     // re-observe new fade-in elements
