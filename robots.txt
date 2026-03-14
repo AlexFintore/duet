@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://duetotobrajenie.ru/sitemap.xml
