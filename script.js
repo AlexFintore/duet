@@ -38,6 +38,18 @@ if (fadeEls.length > 0) {
   fadeEls.forEach(el => observer.observe(el));
 }
 
+// ===== DARK THEME =====
+(function() {
+  const saved = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-theme', saved);
+})();
+document.getElementById('themeToggle')?.addEventListener('click', function() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
 // ===== HERO IMAGE FADE-IN =====
 const heroImg = document.getElementById('heroImg');
 if (heroImg) {
