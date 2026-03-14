@@ -109,6 +109,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">О нас</a></li>
       <li><a href="#formats">Форматы</a></li>
+      <li><a href="#repertoire">Репертуар</a></li>
       <li><a href="#pricing">Цены</a></li>
       <li><a href="#player">Слушать</a></li>
       <li><a href="#video">Смотреть</a></li>
@@ -242,6 +243,25 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+  <!-- REPERTOIRE -->
+  <section id="repertoire" class="section">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>Репертуар</h2>
+      <span></span>
+    </div>
+    <div class="repertoire-filters fade-in" id="repertoireFilters">
+      <button class="rep-filter active" data-genre="all">Все</button>
+      <button class="rep-filter" data-genre="own">Авторские</button>
+      <button class="rep-filter" data-genre="pop">Поп</button>
+      <button class="rep-filter" data-genre="rock">Рок</button>
+      <button class="rep-filter" data-genre="shanson">Шансон</button>
+    </div>
+    <div class="repertoire-grid fade-in" id="repertoireGrid"></div>
+    <p class="repertoire-note fade-in">Хотите конкретную песню? Свяжитесь — при возможности разучим специально для вашего мероприятия.</p>
   </div>
 </section>
 
@@ -444,9 +464,9 @@
     <div class="news-grid">
 
       <article class="news-card news-card--featured fade-in">
-        <div class="news-badge">Скоро</div>
-        <time class="news-date" datetime="2025-01-01">2025</time>
-        <h3>Новый летний трек</h3>
+        <div class="news-badge">Новинка</div>
+        <time class="news-date" datetime="2026-03-14">Весна 2026</time>
+        <h3>Новый трек уже скоро</h3>
         <p>Дуэт «Отображение» анонсировал выход нового летнего трека. Следите за обновлениями в наших социальных сетях — премьера совсем скоро!</p>
         <a href="https://vk.com/duet_otobrajenie" target="_blank" rel="noopener" class="news-link">
           Следить в ВКонтакте →
@@ -526,6 +546,15 @@
         <p>Базируемся в Нижегородской области — выезжаем на выступления в любой город России. Готовы к сотрудничеству по всему СНГ. Наличие загранпаспортов позволяет рассматривать выступления за пределами РФ.</p>
       </div>
     </div>
+    <div class="avail-block fade-in">
+      <h3>Свободные даты</h3>
+      <p class="avail-sub">Популярные даты расписываются быстро — уточняйте заранее</p>
+      <div class="avail-months" id="availMonths"></div>
+      <div class="avail-legend">
+        <div class="avail-legend-item"><div class="avail-legend-dot avail-legend-dot--free"></div>Свободно</div>
+        <div class="avail-legend-item"><div class="avail-legend-dot avail-legend-dot--busy"></div>Занято</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -578,48 +607,48 @@
     <div class="contacts-grid">
 
       <div class="contacts-form-wrap fade-in">
-        <form id="bookingForm" class="booking-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="formName">Ваше имя *</label>
-              <input type="text" id="formName" name="name" placeholder="Иван Петров" required>
-            </div>
-            <div class="form-group">
-              <label for="formPhone">Телефон *</label>
-              <input type="tel" id="formPhone" name="phone" placeholder="+7 900 000-00-00" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="formDate">Дата мероприятия</label>
-              <input type="date" id="formDate" name="date">
-            </div>
-            <div class="form-group">
-              <label for="formCity">Город</label>
-              <input type="text" id="formCity" name="city" placeholder="Нижний Новгород">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="formFormat">Формат выступления</label>
-            <select id="formFormat" name="format">
-              <option value="">Выберите формат</option>
-              <option>Концертное шоу</option>
-              <option>Живой бэнд</option>
-              <option>Акустический сет</option>
-              <option>Поющий ведущий</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="formMessage">Дополнительно</label>
-            <textarea id="formMessage" name="message" rows="3" placeholder="Расскажите о вашем мероприятии..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-accent form-submit">
-            Отправить заявку в WhatsApp
-          </button>
-        </form>
+        <div class="quiz-wrap">
+  <div class="quiz-progress"><div class="quiz-progress-bar" id="quizProgressBar"></div></div>
+  <!-- Step 1 -->
+  <div class="quiz-step active" id="quizStep1">
+    <p class="quiz-step-num">1 / 3 · Тип мероприятия</p>
+    <h3 class="quiz-q">Что отмечаете?</h3>
+    <div class="quiz-options">
+      <button class="quiz-opt" data-val="Свадьба"><span class="quiz-opt-icon">💒</span><span>Свадьба</span></button>
+      <button class="quiz-opt" data-val="Корпоратив"><span class="quiz-opt-icon">🏢</span><span>Корпоратив</span></button>
+      <button class="quiz-opt" data-val="Юбилей"><span class="quiz-opt-icon">🎂</span><span>Юбилей</span></button>
+      <button class="quiz-opt" data-val="Другое"><span class="quiz-opt-icon">✨</span><span>Другое</span></button>
+    </div>
+  </div>
+  <!-- Step 2 -->
+  <div class="quiz-step" id="quizStep2">
+    <p class="quiz-step-num">2 / 3 · Дата и место</p>
+    <h3 class="quiz-q">Когда и где?</h3>
+    <div class="form-row">
+      <div class="form-group"><label for="quizDate">Дата мероприятия</label><input type="date" id="quizDate"></div>
+      <div class="form-group"><label for="quizCity">Город</label><input type="text" id="quizCity" placeholder="Нижний Новгород"></div>
+    </div>
+    <div class="quiz-nav"><button class="btn quiz-back-btn" id="quizBack2">← Назад</button><button class="btn btn-accent" id="quizNext2">Далее →</button></div>
+  </div>
+  <!-- Step 3 -->
+  <div class="quiz-step" id="quizStep3">
+    <p class="quiz-step-num">3 / 3 · Пожелания</p>
+    <h3 class="quiz-q">Что важно для вас?</h3>
+    <div class="quiz-checks">
+      <label class="quiz-check-item"><input type="checkbox" value="живая гитара"><span>Живая гитара</span></label>
+      <label class="quiz-check-item"><input type="checkbox" value="интерактив с залом"><span>Интерактив с залом</span></label>
+      <label class="quiz-check-item"><input type="checkbox" value="поющий ведущий"><span>Поющий ведущий</span></label>
+      <label class="quiz-check-item"><input type="checkbox" value="авторские песни"><span>Авторские песни</span></label>
+      <label class="quiz-check-item"><input type="checkbox" value="широкий кавер-репертуар"><span>Широкий кавер-репертуар</span></label>
+    </div>
+    <div class="form-group" style="margin-top:14px;"><label for="quizNote">Дополнительно</label><textarea id="quizNote" rows="2" placeholder="Особые пожелания, вопросы..."></textarea></div>
+    <div class="quiz-nav"><button class="btn quiz-back-btn" id="quizBack3">← Назад</button><button class="btn btn-accent" id="quizSubmit">Отправить в WhatsApp →</button></div>
+  </div>
+</div>
       </div>
 
       <div class="contacts-info fade-in">
+        <div class="reply-badge">Ответим за 15 минут</div>
         <h3>Свяжитесь напрямую</h3>
         <p class="contacts-sub">Корпоративы · Свадьбы · Фестивали · Рестораны</p>
         <div class="contacts-actions">
@@ -686,7 +715,7 @@
   <div class="container">
     <div class="footer-inner">
       <span class="nav-logo" style="color: var(--text-muted); font-family: var(--font-heading);">Отображение</span>
-      <p>© 2025 Музыкальный дуэт «Отображение». Нижний Новгород.</p>
+      <p>© 2026 Музыкальный дуэт «Отображение». Нижний Новгород.</p>
     </div>
   </div>
 </footer>
