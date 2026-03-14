@@ -209,147 +209,190 @@ const REPERTOIRE = [
   { title: 'Любовь приходит не одна',         genre: 'own', artist: 'Дуэт «Отображение»' },
   { title: 'Бригантина любви',               genre: 'own', artist: 'Дуэт «Отображение»' },
   { title: 'Танцы в ночи',                   genre: 'own', artist: 'Дуэт «Отображение»' },
-  { title: 'Дети войны',                     genre: 'own', artist: 'Дуэт «Отображение»' },
-  { title: 'Скажи мне',                      genre: 'own', artist: 'Дуэт «Отображение»' },
+  { title: 'Дети войны',                     genre: 'own', artist: 'Сергей Зорин' },
+  { title: 'Скажи мне',                      genre: 'own', artist: 'Сергей Зорин' },
 
-  // === ПОП · ДУЭТ ===
-  { title: 'Песенка о медведях',             genre: 'pop', artist: 'Аида Ведищева' },
-  { title: 'Безответно',                     genre: 'pop', artist: '' },
-  { title: 'Незаконченный роман',            genre: 'pop', artist: '' },
-  { title: 'Счастье',                        genre: 'pop', artist: '' },
-  { title: 'Счастье (новогодняя)',           genre: 'pop', artist: '' },
-  { title: 'За тебя',                        genre: 'pop', artist: '' },
-
-  // === ПОП · СЕРГЕЙ ===
-  { title: 'Девочка моя',                    genre: 'pop', artist: '' },
-  { title: 'Как долго я тебя искал',         genre: 'pop', artist: '' },
-  { title: '7000 над землёй',               genre: 'pop', artist: 'Игорь Николаев' },
-  { title: 'Большая Медведица',             genre: 'pop', artist: '' },
-
-  // === ПОП · РАМИЛЯ ===
-  { title: 'Любимый человек',               genre: 'pop', artist: '' },
-  { title: 'Уфтанма',                       genre: 'pop', artist: '' },
-  { title: 'Лирика',                        genre: 'pop', artist: '' },
-  { title: 'Одно и то же',                  genre: 'pop', artist: '' },
-  { title: 'Белые цветы',                   genre: 'pop', artist: '' },
-  { title: 'Credo',                         genre: 'pop', artist: '' },
-  { title: 'ЯТЛ',                           genre: 'pop', artist: '' },
-  { title: 'Звёздное лето',                 genre: 'pop', artist: '' },
-  { title: 'Миллион алых роз',              genre: 'pop', artist: 'Алла Пугачёва' },
-  { title: 'Зимний сон',                    genre: 'pop', artist: '' },
-  { title: 'Милэшлэрем',                    genre: 'pop', artist: '' },
-  { title: 'Не жди меня',                   genre: 'pop', artist: '' },
-  { title: 'Так же как все',                genre: 'pop', artist: '' },
-  { title: 'Попытка №5',                    genre: 'pop', artist: 'Натали' },
-  { title: 'Задержи',                       genre: 'pop', artist: '' },
-  { title: 'Солнце',                        genre: 'pop', artist: '' },
-  { title: 'Ягода-малина',                  genre: 'pop', artist: 'Наташа Королёва' },
-  { title: 'С днём рождения',               genre: 'pop', artist: '' },
-  { title: 'Угонщица',                      genre: 'pop', artist: '' },
-  { title: 'Бессовестно счастливая',        genre: 'pop', artist: 'Наташа Королёва' },
-  { title: 'Брутальный мужчина',            genre: 'pop', artist: '' },
-  { title: 'Всё в твоих руках',             genre: 'pop', artist: '' },
-  { title: 'Я тебя люблю',                  genre: 'pop', artist: '' },
+  // === ПОП ===
+  { title: 'Песенка о медведях',             genre: 'pop', artist: 'Алёна Свиридова' },
+  { title: 'Безответно',                     genre: 'pop', artist: 'В. Меладзе, А. Приходько' },
+  { title: 'Незаконченный роман',            genre: 'pop', artist: 'И. Аллегрова, И. Крутой' },
+  { title: 'Счастье',                        genre: 'pop', artist: 'Лев Лещенко, Жасмин' },
+  { title: 'Счастье (новогодняя)',           genre: 'pop', artist: 'Лев Лещенко, Жасмин' },
+  { title: 'За тебя',                        genre: 'pop', artist: 'Ян Марти, Ваенга' },
+  { title: 'Девочка моя',                    genre: 'pop', artist: 'Emin' },
+  { title: 'Как долго я тебя искал',         genre: 'pop', artist: 'Алексей Брянцев' },
+  { title: '7000 над землёй',               genre: 'pop', artist: 'Валерий Сюткин' },
+  { title: 'Большая Медведица',             genre: 'pop', artist: 'Михаил Боярский' },
+  { title: 'Любимый человек',               genre: 'pop', artist: 'Анивар' },
+  { title: 'Уфтанма',                       genre: 'pop', artist: 'Элвин Грей' },
+  { title: 'Лирика',                        genre: 'pop', artist: 'Filatov & Karas' },
+  { title: 'Одно и то же',                  genre: 'pop', artist: 'IOWA' },
+  { title: 'Белые цветы',                   genre: 'pop', artist: 'Silder' },
+  { title: 'Credo',                         genre: 'pop', artist: 'Zivert' },
+  { title: 'ЯТЛ',                           genre: 'pop', artist: 'Zivert' },
+  { title: 'Звёздное лето',                 genre: 'pop', artist: 'А. Пугачёва' },
+  { title: 'Миллион алых роз',              genre: 'pop', artist: 'А. Пугачёва' },
+  { title: 'Зимний сон',                    genre: 'pop', artist: 'Алсу' },
+  { title: 'Милэшлэрем',                    genre: 'pop', artist: 'Алсу Хисамиева' },
+  { title: 'Не жди меня',                   genre: 'pop', artist: 'А. Варум' },
+  { title: 'Так же как все',                genre: 'pop', artist: 'А-Студио' },
+  { title: 'Попытка №5',                    genre: 'pop', artist: 'ВИА ГРА' },
+  { title: 'Задержи',                       genre: 'pop', artist: 'В. Ильинская' },
+  { title: 'Солнце',                        genre: 'pop', artist: 'Е. Терлеева' },
+  { title: 'Ягода-малина',                  genre: 'pop', artist: 'Жасмин' },
+  { title: 'С днём рождения',               genre: 'pop', artist: 'И. Аллегрова' },
+  { title: 'Угонщица',                      genre: 'pop', artist: 'И. Аллегрова' },
+  { title: 'Бессовестно счастливая',        genre: 'pop', artist: 'Н. Голицина' },
+  { title: 'Брутальный мужчина',            genre: 'pop', artist: 'К. Ростовцева' },
+  { title: 'Всё в твоих руках',             genre: 'pop', artist: 'Агутин, Варум' },
+  { title: 'Я тебя люблю',                  genre: 'pop', artist: 'М. Собко' },
   { title: 'Музыка нас связала',            genre: 'pop', artist: 'Мираж' },
-  { title: 'Ветер с моря дул',              genre: 'pop', artist: 'Наташа Королёва' },
-  { title: 'Полюби меня такой',             genre: 'pop', artist: '' },
-  { title: 'Черная смородина',              genre: 'pop', artist: 'Наташа Королёва' },
-  { title: 'Я у твоих ног',                 genre: 'pop', artist: '' },
-  { title: 'Жёлтые тюльпаны',              genre: 'pop', artist: '' },
-  { title: 'Синие лебеди',                  genre: 'pop', artist: '' },
-  { title: 'Чуть-чуть не считается',        genre: 'pop', artist: '' },
-  { title: 'Каждая женщина хочет',          genre: 'pop', artist: '' },
-  { title: 'Отображение',                   genre: 'pop', artist: 'Дуэт «Отображение»' },
-  { title: 'На теплоходе музыка играет',    genre: 'pop', artist: '' },
-  { title: 'Снежинка',                      genre: 'pop', artist: '' },
-  { title: 'Подруга',                       genre: 'pop', artist: '' },
-  { title: 'Белая черёмуха',               genre: 'pop', artist: '' },
-  { title: 'Жили-были',                     genre: 'pop', artist: '' },
-  { title: 'Матушка-Земля',                 genre: 'pop', artist: '' },
-  { title: 'Странник',                      genre: 'pop', artist: '' },
+  { title: 'Ветер с моря дул',              genre: 'pop', artist: 'Натали' },
+  { title: 'Полюби меня такой',             genre: 'pop', artist: 'Н. Могилевская' },
+  { title: 'Черная смородина',              genre: 'pop', artist: 'А. Росс' },
+  { title: 'Я у твоих ног',                 genre: 'pop', artist: 'Н. Власова' },
+  { title: 'Жёлтые тюльпаны',              genre: 'pop', artist: 'Н. Королёва' },
+  { title: 'Синие лебеди',                  genre: 'pop', artist: 'Н. Королёва' },
+  { title: 'Чуть-чуть не считается',        genre: 'pop', artist: 'Н. Королёва' },
+  { title: 'Каждая женщина хочет',          genre: 'pop', artist: 'Н. Королёва' },
+  { title: 'Отображение',                   genre: 'pop', artist: 'Нюша' },
+  { title: 'На теплоходе музыка играет',    genre: 'pop', artist: 'О. Зарубина' },
+  { title: 'Снежинка',                      genre: 'pop', artist: 'Приключения Электроников' },
+  { title: 'Подруга',                       genre: 'pop', artist: 'Слава' },
+  { title: 'Белая черёмуха',               genre: 'pop', artist: 'Ю. Михальчик' },
+  { title: 'Жили-были',                     genre: 'pop', artist: 'Юта' },
+  { title: 'Матушка-Земля',                 genre: 'pop', artist: 'Т. Куртукова' },
+  { title: 'Странник',                      genre: 'pop', artist: 'Абдулкарим Каримов' },
 
-  // === РОК · СЕРГЕЙ ===
-  { title: 'Cristmas',                      genre: 'rock', artist: '' },
+  // === РОК ===
+  { title: 'Cristmas',                      genre: 'rock', artist: 'Би-2' },
   { title: 'Компромисс',                    genre: 'rock', artist: 'Би-2' },
-  { title: 'Лайки',                         genre: 'rock', artist: '' },
-  { title: 'Скользкие улицы',               genre: 'rock', artist: '' },
-  { title: 'Ветер знает',                   genre: 'rock', artist: '' },
-  { title: 'Жар-птица',                     genre: 'rock', artist: '' },
-  { title: 'Этот город',                    genre: 'rock', artist: '' },
-  { title: 'Это за окном рассвет',          genre: 'rock', artist: '' },
-  { title: 'Первый снег',                   genre: 'rock', artist: '' },
-  { title: 'Диктофоны',                     genre: 'rock', artist: '' },
-  { title: 'Половинка',                     genre: 'rock', artist: '' },
-  { title: 'Цветут цветы',                  genre: 'rock', artist: '' },
-  { title: 'Город',                         genre: 'rock', artist: '' },
+  { title: 'Лайки',                         genre: 'rock', artist: 'Би-2' },
+  { title: 'Скользкие улицы',               genre: 'rock', artist: 'Би-2' },
+  { title: 'Ветер знает',                   genre: 'rock', artist: 'Браво' },
+  { title: 'Жар-птица',                     genre: 'rock', artist: 'Браво' },
+  { title: 'Этот город',                    genre: 'rock', artist: 'Браво' },
+  { title: 'Это за окном рассвет',          genre: 'rock', artist: 'Браво' },
+  { title: 'Первый снег',                   genre: 'rock', artist: 'Моральный кодекс' },
+  { title: 'Диктофоны',                     genre: 'rock', artist: 'Танцы минус' },
+  { title: 'Половинка',                     genre: 'rock', artist: 'Танцы минус' },
+  { title: 'Цветут цветы',                  genre: 'rock', artist: 'Танцы минус' },
+  { title: 'Город',                         genre: 'rock', artist: 'Танцы минус' },
+  { title: 'Танкист',                       genre: 'rock', artist: 'Жуки' },
 
-  // === РОК · РАМИЛЯ ===
-  { title: 'Танкист',                       genre: 'rock', artist: '' },
-
-  // === ШАНСОН · ДУЭТ ===
-  { title: 'В сердце твоём',               genre: 'shanson', artist: '' },
-  { title: 'Как будто мы с тобой',          genre: 'shanson', artist: '' },
-  { title: 'Любимый взгляд',               genre: 'shanson', artist: '' },
-  { title: 'Привет, малыш',                genre: 'shanson', artist: '' },
-  { title: 'Заходи ко мне во сне',          genre: 'shanson', artist: '' },
-  { title: 'Тебе моя последняя любовь',    genre: 'shanson', artist: '' },
-
-  // === ШАНСОН · СЕРГЕЙ ===
-  { title: 'А мы не ангелы, парень',       genre: 'shanson', artist: 'Мурат Насыров' },
-  { title: 'Одинокая волчица',              genre: 'shanson', artist: '' },
+  // === ШАНСОН ===
+  { title: 'В сердце твоём',               genre: 'shanson', artist: 'И. Круг, А. Брянцев' },
+  { title: 'Как будто мы с тобой',          genre: 'shanson', artist: 'И. Круг, А. Брянцев' },
+  { title: 'Любимый взгляд',               genre: 'shanson', artist: 'И. Круг, А. Брянцев' },
+  { title: 'Привет, малыш',                genre: 'shanson', artist: 'И. Круг, А. Брянцев' },
+  { title: 'Заходи ко мне во сне',          genre: 'shanson', artist: 'И. Круг, А. Брянцев' },
+  { title: 'Тебе моя последняя любовь',    genre: 'shanson', artist: 'И. Круг, М. Круг' },
+  { title: 'А мы не ангелы, парень',       genre: 'shanson', artist: 'Алексей Пономарев' },
+  { title: 'Одинокая волчица',              genre: 'shanson', artist: 'Белый Орёл' },
   { title: 'Владимирский централ',          genre: 'shanson', artist: 'Михаил Круг' },
-  { title: 'Мой Бог',                       genre: 'shanson', artist: '' },
-  { title: 'Мышка',                         genre: 'shanson', artist: '' },
-  { title: 'Падал снег',                    genre: 'shanson', artist: '' },
-  { title: 'Марджанджа',                    genre: 'shanson', artist: '' },
-  { title: 'Марджанджа (ремикс)',           genre: 'shanson', artist: '' },
-  { title: 'Пальма-де-Майорка',            genre: 'shanson', artist: 'Юрий Антонов' },
-  { title: 'Ветер в голове',               genre: 'shanson', artist: '' },
-  { title: 'Московская',                    genre: 'shanson', artist: '' },
-  { title: 'Сочи',                          genre: 'shanson', artist: '' },
-  { title: 'Снегири',                       genre: 'shanson', artist: '' },
-  { title: 'Осколки',                       genre: 'shanson', artist: '' },
-
-  // === ШАНСОН · РАМИЛЯ ===
-  { title: 'Желаю',                         genre: 'shanson', artist: '' },
-  { title: 'Курю',                          genre: 'shanson', artist: '' },
-  { title: 'Девочка',                       genre: 'shanson', artist: '' },
-  { title: 'Бокал Бакарди',               genre: 'shanson', artist: '' },
-  { title: 'Ветер',                         genre: 'shanson', artist: '' },
-  { title: 'Дом на горе',                   genre: 'shanson', artist: '' },
-  { title: 'Ищи не ищи',                   genre: 'shanson', artist: '' },
-  { title: 'Я прочитаю в глазах твоих',    genre: 'shanson', artist: '' },
-  { title: 'Младший лейтенант',             genre: 'shanson', artist: '' },
-  { title: 'Не жалей',                      genre: 'shanson', artist: '' },
-  { title: 'Гитара',                        genre: 'shanson', artist: '' },
-  { title: 'К единственному нежному',       genre: 'shanson', artist: '' },
-  { title: 'Мы с тобою похожи',            genre: 'shanson', artist: '' },
-  { title: 'Небо',                          genre: 'shanson', artist: '' },
-  { title: 'По полюшку',                   genre: 'shanson', artist: '' },
+  { title: 'Мой Бог',                       genre: 'shanson', artist: 'Михаил Круг' },
+  { title: 'Мышка',                         genre: 'shanson', artist: 'Михаил Круг' },
+  { title: 'Падал снег',                    genre: 'shanson', artist: 'Михаил Круг' },
+  { title: 'Марджанджа',                    genre: 'shanson', artist: 'Михаил Шуфутинский' },
+  { title: 'Марджанджа (ремикс)',           genre: 'shanson', artist: 'Михаил Шуфутинский' },
+  { title: 'Пальма-де-Майорка',            genre: 'shanson', artist: 'Михаил Шуфутинский' },
+  { title: 'Ветер в голове',               genre: 'shanson', artist: 'Трофим' },
+  { title: 'Московская',                    genre: 'shanson', artist: 'Трофим' },
+  { title: 'Сочи',                          genre: 'shanson', artist: 'Трофим' },
+  { title: 'Снегири',                       genre: 'shanson', artist: 'Трофим' },
+  { title: 'Осколки',                       genre: 'shanson', artist: 'Юрий Смыслов' },
+  { title: 'Желаю',                         genre: 'shanson', artist: 'Ваенга' },
+  { title: 'Курю',                          genre: 'shanson', artist: 'Ваенга' },
+  { title: 'Девочка',                       genre: 'shanson', artist: 'Ваенга' },
+  { title: 'Бокал Бакарди',               genre: 'shanson', artist: 'И. Круг' },
+  { title: 'Ветер',                         genre: 'shanson', artist: 'И. Круг' },
+  { title: 'Дом на горе',                   genre: 'shanson', artist: 'И. Круг' },
+  { title: 'Ищи не ищи',                   genre: 'shanson', artist: 'И. Круг' },
+  { title: 'Я прочитаю в глазах твоих',    genre: 'shanson', artist: 'И. Круг' },
+  { title: 'Младший лейтенант',             genre: 'shanson', artist: 'И. Аллегрова' },
+  { title: 'Не жалей',                      genre: 'shanson', artist: 'Лилия Туманова' },
+  { title: 'Гитара',                        genre: 'shanson', artist: 'Л. Успенская' },
+  { title: 'К единственному нежному',       genre: 'shanson', artist: 'Л. Успенская' },
+  { title: 'Мы с тобою похожи',            genre: 'shanson', artist: 'Л. Успенская' },
+  { title: 'Небо',                          genre: 'shanson', artist: 'Л. Успенская' },
+  { title: 'По полюшку',                   genre: 'shanson', artist: 'Л. Успенская' },
 ];
 
-const repGrid = document.getElementById('repertoireGrid');
-if (repGrid) {
-  function renderRepertoire(genre) {
-    repGrid.innerHTML = '';
-    REPERTOIRE.filter(s => genre === 'all' || s.genre === genre).forEach(song => {
-      const div = document.createElement('div');
-      div.className = 'rep-item';
-      div.dataset.genre = song.genre;
-      div.innerHTML = `<span class="rep-title">${song.title}</span>${song.artist ? `<span class="rep-artist">${song.artist}</span>` : ''}`;
-      repGrid.appendChild(div);
-    });
-  }
-  renderRepertoire('all');
+// ===== REPERTOIRE MODAL =====
+(function() {
+  const PER_PAGE = 20;
+  let currentGenre = 'all';
+  let currentPage = 1;
 
-  document.getElementById('repertoireFilters')?.querySelectorAll('.rep-filter').forEach(btn => {
+  const modal = document.getElementById('repModal');
+  if (!modal) return;
+
+  function getFiltered() {
+    return currentGenre === 'all' ? REPERTOIRE : REPERTOIRE.filter(s => s.genre === currentGenre);
+  }
+
+  function render() {
+    const list = getFiltered();
+    const totalPages = Math.ceil(list.length / PER_PAGE);
+    if (currentPage > totalPages) currentPage = 1;
+    const start = (currentPage - 1) * PER_PAGE;
+    const items = list.slice(start, start + PER_PAGE);
+
+    document.getElementById('repModalList').innerHTML = items.map(song =>
+      `<div class="rep-modal-item"><span class="rep-title">${song.title}</span>${song.artist ? `<span class="rep-artist">${song.artist}</span>` : ''}</div>`
+    ).join('');
+
+    document.getElementById('repModalCount').textContent = `${list.length} песен`;
+    document.getElementById('repPageInfo').textContent = `${currentPage} / ${totalPages}`;
+    document.getElementById('repPrevPage').disabled = currentPage === 1;
+    document.getElementById('repNextPage').disabled = currentPage === totalPages;
+  }
+
+  function open() {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    render();
+  }
+
+  function close() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('openRepModal')?.addEventListener('click', open);
+  document.getElementById('repModalClose')?.addEventListener('click', close);
+  document.getElementById('repModalOverlay')?.addEventListener('click', close);
+
+  document.getElementById('repPrevPage')?.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      render();
+      document.getElementById('repModalList').scrollTop = 0;
+    }
+  });
+
+  document.getElementById('repNextPage')?.addEventListener('click', () => {
+    if (currentPage < Math.ceil(getFiltered().length / PER_PAGE)) {
+      currentPage++;
+      render();
+      document.getElementById('repModalList').scrollTop = 0;
+    }
+  });
+
+  document.getElementById('repModalFilters')?.querySelectorAll('.rep-filter').forEach(btn => {
     btn.addEventListener('click', function() {
-      document.querySelectorAll('.rep-filter').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#repModalFilters .rep-filter').forEach(b => b.classList.remove('active'));
       this.classList.add('active');
-      renderRepertoire(this.dataset.genre);
+      currentGenre = this.dataset.genre;
+      currentPage = 1;
+      render();
     });
   });
-}
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) close();
+  });
+})()
 
 // ===== AVAILABILITY =====
 const BUSY_DATES = {

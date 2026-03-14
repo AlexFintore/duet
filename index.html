@@ -253,15 +253,11 @@
       <h2>Репертуар</h2>
       <span></span>
     </div>
-    <div class="repertoire-filters fade-in" id="repertoireFilters">
-      <button class="rep-filter active" data-genre="all">Все</button>
-      <button class="rep-filter" data-genre="own">Авторские</button>
-      <button class="rep-filter" data-genre="pop">Поп</button>
-      <button class="rep-filter" data-genre="rock">Рок</button>
-      <button class="rep-filter" data-genre="shanson">Шансон</button>
+    <div class="rep-preview fade-in">
+      <p class="rep-preview-text">105 песен: поп · рок · шансон · авторские</p>
+      <button class="btn btn-accent rep-open-btn" id="openRepModal">Открыть репертуар</button>
+      <p class="repertoire-note">Хотите конкретную песню? Свяжитесь — при возможности разучим специально для вашего мероприятия.</p>
     </div>
-    <div class="repertoire-grid" id="repertoireGrid"></div>
-    <p class="repertoire-note fade-in">Хотите конкретную песню? Свяжитесь — при возможности разучим специально для вашего мероприятия.</p>
   </div>
 </section>
 
@@ -692,6 +688,33 @@
   </div>
 </section>
 
+  <!-- REPERTOIRE MODAL -->
+  <div id="repModal" class="rep-modal" role="dialog" aria-modal="true" aria-label="Репертуар дуэта">
+    <div class="rep-modal-overlay" id="repModalOverlay"></div>
+    <div class="rep-modal-panel">
+      <div class="rep-modal-header">
+        <div>
+          <h3>Репертуар дуэта</h3>
+          <span class="rep-modal-count" id="repModalCount">105 песен</span>
+        </div>
+        <button class="rep-modal-close" id="repModalClose" aria-label="Закрыть">✕</button>
+      </div>
+      <div class="rep-modal-filters" id="repModalFilters">
+        <button class="rep-filter active" data-genre="all">Все</button>
+        <button class="rep-filter" data-genre="own">Авторские</button>
+        <button class="rep-filter" data-genre="pop">Поп</button>
+        <button class="rep-filter" data-genre="rock">Рок</button>
+        <button class="rep-filter" data-genre="shanson">Шансон</button>
+      </div>
+      <div class="rep-modal-list" id="repModalList"></div>
+      <div class="rep-modal-pagination">
+        <button class="rep-page-btn" id="repPrevPage" aria-label="Назад">←</button>
+        <span class="rep-page-info" id="repPageInfo"></span>
+        <button class="rep-page-btn" id="repNextPage" aria-label="Вперёд">→</button>
+      </div>
+    </div>
+  </div>
+
   <!-- VIDEO MODAL -->
   <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Просмотр видео">
     <div class="video-modal-overlay" id="videoModalOverlay"></div>
@@ -728,6 +751,6 @@
     </svg>
   </a>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>
