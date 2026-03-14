@@ -438,8 +438,8 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
 .gallery-track-outer::after  { right: 0; background: linear-gradient(to left, #F3EDE4, transparent); }
 .gallery-track {
   display: flex;
-  gap: 16px;
-  animation: gallery-scroll 70s linear infinite;
+  gap: 12px;
+  animation: gallery-scroll 110s linear infinite;
   width: max-content;
   will-change: transform;
 }
@@ -451,11 +451,23 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   100% { transform: translateX(-50%); }
 }
 .gallery-photo {
-  width: 320px; height: 220px;
+  width: 240px; height: 240px;
   flex-shrink: 0;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 16px var(--shadow);
+  cursor: pointer;
+  position: relative;
+}
+.gallery-photo::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,0);
+  transition: background 0.3s ease;
+  border-radius: 10px;
+}
+.gallery-photo:hover::after {
+  background: rgba(0,0,0,0.18);
 }
 .gallery-photo img {
   width: 100%; height: 100%;
@@ -464,7 +476,61 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   display: block;
 }
 .gallery-photo:hover img {
-  transform: scale(1.06);
+  transform: scale(1.07);
+}
+
+/* ===== PHOTO MODAL ===== */
+.photo-modal {
+  position: fixed; inset: 0;
+  z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.photo-modal.active {
+  opacity: 1; pointer-events: all;
+}
+.photo-modal-overlay {
+  position: absolute; inset: 0;
+  background: rgba(10,5,2,0.93);
+  cursor: pointer;
+}
+.photo-modal-close {
+  position: absolute; top: 20px; right: 24px;
+  background: none; border: none;
+  color: rgba(255,255,255,0.6); font-size: 1.8rem;
+  cursor: pointer; z-index: 1; line-height: 1;
+  transition: color 0.2s; font-family: var(--font-body);
+}
+.photo-modal-close:hover { color: var(--accent); }
+.photo-modal-img {
+  position: relative; z-index: 1;
+  max-width: 90vw; max-height: 85vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7);
+  transition: opacity 0.2s ease;
+}
+.photo-modal-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  z-index: 2;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.8);
+  width: 48px; height: 48px;
+  border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  font-size: 1.2rem;
+}
+.photo-modal-nav:hover { background: rgba(201,169,110,0.25); color: var(--accent); }
+.photo-modal-prev { left: 20px; }
+.photo-modal-next { right: 20px; }
+.photo-modal-counter {
+  position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+  z-index: 2; color: rgba(255,255,255,0.45);
+  font-size: 0.78rem; letter-spacing: 0.1em;
+  font-family: var(--font-body);
 }
 
 /* ===== NEWS ===== */

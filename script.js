@@ -54,17 +54,77 @@ document.querySelectorAll('.video-thumb').forEach(card => {
 
 // ===== GALLERY =====
 const galleryTrack = document.getElementById('galleryTrack');
+const PHOTOS = Array.from({length: 33}, (_, i) => `photo/photo_${i + 1}_2026-03-14_14-37-30.jpg`);
+
 if (galleryTrack) {
-  const photos = Array.from({length: 33}, (_, i) => `photo/photo_${i + 1}_2026-03-14_14-37-30.jpg`);
-  [...photos, ...photos].forEach(src => {
+  [...PHOTOS, ...PHOTOS].forEach((src, idx) => {
     const div = document.createElement('div');
     div.className = 'gallery-photo';
+    div.dataset.index = idx % PHOTOS.length;
     const img = document.createElement('img');
     img.src = src;
     img.alt = 'Дуэт Отображение — фотография';
     img.loading = 'lazy';
     div.appendChild(img);
     galleryTrack.appendChild(div);
+  });
+}
+
+// ===== PHOTO MODAL =====
+const modal    = document.getElementById('photoModal');
+const modalImg = document.getElementById('modalImg');
+const modalCounter = document.getElementById('modalCounter');
+let currentIdx = 0;
+
+function openModal(idx) {
+  currentIdx = idx;
+  modalImg.src = PHOTOS[currentIdx];
+  modalCounter.textContent = `${currentIdx + 1} / ${PHOTOS.length}`;
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function showNext() {
+  currentIdx = (currentIdx + 1) % PHOTOS.length;
+  modalImg.style.opacity = '0';
+  setTimeout(() => {
+    modalImg.src = PHOTOS[currentIdx];
+    modalCounter.textContent = `${currentIdx + 1} / ${PHOTOS.length}`;
+    modalImg.style.opacity = '1';
+  }, 150);
+}
+
+function showPrev() {
+  currentIdx = (currentIdx - 1 + PHOTOS.length) % PHOTOS.length;
+  modalImg.style.opacity = '0';
+  setTimeout(() => {
+    modalImg.src = PHOTOS[currentIdx];
+    modalCounter.textContent = `${currentIdx + 1} / ${PHOTOS.length}`;
+    modalImg.style.opacity = '1';
+  }, 150);
+}
+
+if (modal) {
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('modalOverlay').addEventListener('click', closeModal);
+  document.getElementById('modalNext').addEventListener('click', showNext);
+  document.getElementById('modalPrev').addEventListener('click', showPrev);
+
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'Escape')       closeModal();
+    if (e.key === 'ArrowRight')   showNext();
+    if (e.key === 'ArrowLeft')    showPrev();
+  });
+
+  document.addEventListener('click', e => {
+    const photo = e.target.closest('.gallery-photo');
+    if (photo) openModal(Number(photo.dataset.index));
   });
 }
 
