@@ -38,6 +38,40 @@ if (fadeEls.length > 0) {
   fadeEls.forEach(el => observer.observe(el));
 }
 
+// ===== HERO IMAGE FADE-IN =====
+const heroImg = document.getElementById('heroImg');
+if (heroImg) {
+  const onLoad = () => heroImg.classList.add('loaded');
+  if (heroImg.complete) onLoad();
+  else heroImg.addEventListener('load', onLoad);
+}
+
+// ===== BOOKING FORM → WHATSAPP =====
+document.getElementById('bookingForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name    = document.getElementById('formName').value.trim();
+  const phone   = document.getElementById('formPhone').value.trim();
+  const date    = document.getElementById('formDate').value;
+  const city    = document.getElementById('formCity').value.trim();
+  const format  = document.getElementById('formFormat').value;
+  const message = document.getElementById('formMessage').value.trim();
+
+  if (!name || !phone) {
+    document.getElementById(name ? 'formPhone' : 'formName').focus();
+    return;
+  }
+
+  let text = `Заявка на выступление дуэта «Отображение»\n\n`;
+  text += `Имя: ${name}\n`;
+  text += `Телефон: ${phone}\n`;
+  if (date)    text += `Дата: ${new Date(date).toLocaleDateString('ru-RU')}\n`;
+  if (city)    text += `Город: ${city}\n`;
+  if (format)  text += `Формат: ${format}\n`;
+  if (message) text += `\n${message}`;
+
+  window.open(`https://wa.me/79307001530?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+});
+
 // ===== VIDEO CLICK-TO-EMBED =====
 document.querySelectorAll('.video-thumb').forEach(card => {
   card.addEventListener('click', function handler(e) {

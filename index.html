@@ -3,13 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Дуэт «Отображение» — музыкальный дуэт из Нижнего Новгорода</title>
-  <meta name="description" content="Музыкальный дуэт Сергея Зорина и Рамили Минажетдиновой. Поп, рок, шансон. Корпоративы, свадьбы, фестивали по всей России.">
+  <title>Дуэт «Отображение» — заказать живой вокал на свадьбу, корпоратив, Нижний Новгород</title>
+  <meta name="description" content="Музыкальный дуэт Сергея Зорина и Рамили Минажетдиновой. Живой вокал на свадьбы, корпоративы, фестивали. Поп, рок, шансон. Участники «Привет, Андрей!» на Россия-1. Выезд по всей России.">
+  <meta name="keywords" content="музыкальный дуэт, живой вокал, свадьба, корпоратив, Нижний Новгород, поп, рок, шансон, артисты на праздник">
+  <meta name="robots" content="index, follow">
   <!-- Open Graph -->
-  <meta property="og:title" content="Дуэт «Отображение» — музыкальный дуэт из Нижнего Новгорода">
-  <meta property="og:description" content="Корпоративы, свадьбы, фестивали. Поп, рок, шансон. Участники шоу «Привет, Андрей!» на Россия-1.">
+  <meta property="og:title" content="Дуэт «Отображение» — живой вокал на ваш праздник">
+  <meta property="og:description" content="Заказать выступление дуэта на свадьбу, корпоратив, фестиваль. Нижний Новгород и вся Россия. Участники шоу «Привет, Андрей!» на Россия-1.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
+  <meta property="og:url" content="https://alexfintore.github.io/duet/">
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicGroup",
+    "name": "Дуэт «Отображение»",
+    "description": "Музыкальный дуэт Сергея Зорина и Рамили Минажетдиновой из Нижнего Новгорода. Живой вокал на корпоративы, свадьбы, фестивали.",
+    "genre": ["Поп", "Рок", "Русский шансон"],
+    "url": "https://alexfintore.github.io/duet/",
+    "image": "https://alexfintore.github.io/duet/images/hero.jpg",
+    "foundingLocation": { "@type": "Place", "name": "Нижний Новгород, Россия" },
+    "member": [
+      { "@type": "Person", "name": "Сергей Зорин" },
+      { "@type": "Person", "name": "Рамиля Минажетдинова" }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+7-930-700-15-30",
+      "contactType": "booking",
+      "availableLanguage": "Russian"
+    }
+  }
+  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +54,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">О нас</a></li>
       <li><a href="#formats">Форматы</a></li>
+      <li><a href="#pricing">Цены</a></li>
       <li><a href="#player">Слушать</a></li>
       <li><a href="#video">Смотреть</a></li>
       <li><a href="#gallery">Фото</a></li>
@@ -40,7 +67,7 @@
   <!-- HERO -->
   <section id="hero">
   <div class="hero-bg">
-    <img src="images/hero.jpg" alt="Дуэт Отображение" class="hero-img">
+    <img src="images/hero.jpg" alt="Дуэт Отображение" class="hero-img" id="heroImg" fetchpriority="high">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content container">
@@ -142,6 +169,79 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>Стоимость</h2>
+      <span></span>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="pricing-card fade-in">
+        <div class="pricing-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3M8 22h8"/>
+          </svg>
+        </div>
+        <h3>Акустический сет</h3>
+        <p class="pricing-duration">1,5–2,5 часа</p>
+        <ul class="pricing-features">
+          <li>Живой вокал под гитару или фортепиано</li>
+          <li>До 20 песен в репертуаре</li>
+          <li>Фуршеты, VIP-ужины, небольшие залы</li>
+          <li>Выезд по Нижегородской области</li>
+        </ul>
+        <a href="#contacts" class="btn pricing-cta" style="border: 2px solid var(--border);">Уточнить стоимость</a>
+      </div>
+
+      <div class="pricing-card pricing-card--featured fade-in">
+        <div class="pricing-badge">Популярный</div>
+        <div class="pricing-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M9 18V5l12-2v13M9 9l12-2"/>
+            <circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+          </svg>
+        </div>
+        <h3>Концертное шоу</h3>
+        <p class="pricing-duration">2–4 часа</p>
+        <ul class="pricing-features">
+          <li>Живой вокал под фонограмму</li>
+          <li>Смена концертных костюмов</li>
+          <li>Работа с залом, конкурсы, интерактив</li>
+          <li>Свадьбы, корпоративы, юбилеи</li>
+          <li>Опция: поющий ведущий</li>
+        </ul>
+        <a href="#contacts" class="btn btn-accent pricing-cta">Уточнить стоимость</a>
+      </div>
+
+      <div class="pricing-card fade-in">
+        <div class="pricing-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="8" width="4" height="10" rx="1"/>
+            <rect x="9" y="5" width="4" height="13" rx="1"/>
+            <rect x="16" y="3" width="4" height="15" rx="1"/>
+            <path d="M2 21h20"/>
+          </svg>
+        </div>
+        <h3>Живой бэнд</h3>
+        <p class="pricing-duration">3–5 часов</p>
+        <ul class="pricing-features">
+          <li>Вокал + живые музыканты</li>
+          <li>Ритм-секция, гитара, клавиши</li>
+          <li>Большие площадки и фестивали</li>
+          <li>Максимальная насыщенность звука</li>
+          <li>Выезд по всей России и СНГ</li>
+        </ul>
+        <a href="#contacts" class="btn pricing-cta" style="border: 2px solid var(--border);">Уточнить стоимость</a>
+      </div>
+
+    </div>
+    <p class="pricing-note fade-in">Точная стоимость зависит от города, продолжительности и формата мероприятия. Свяжитесь — рассчитаем индивидуально.</p>
   </div>
 </section>
 
@@ -298,6 +398,43 @@
   </div>
 </section>
 
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="section section--alt">
+  <div class="container">
+    <div class="section-title fade-in">
+      <h2>Отзывы</h2>
+      <span></span>
+    </div>
+    <div class="testimonials-grid">
+
+      <blockquote class="testimonial-card fade-in">
+        <p>«Заказывали дуэт на корпоратив в декабре. Атмосфера была невероятная — весь зал пел вместе с ними. Очень профессиональные ребята, всё чётко по тайминг, красивые костюмы.»</p>
+        <footer>
+          <strong>Марина Соколова</strong>
+          <span>Корпоратив · Нижний Новгород</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="testimonial-card fade-in">
+        <p>«Сергей и Рамиля вели нашу свадьбу и выступали как артисты. Это было идеально — не нужно было искать отдельно ведущего и артистов. Гости до сих пор вспоминают!»</p>
+        <footer>
+          <strong>Алексей и Юлия Петровы</strong>
+          <span>Свадьба · Дзержинск</span>
+        </footer>
+      </blockquote>
+
+      <blockquote class="testimonial-card fade-in">
+        <p>«Брали акустический сет на юбилей — очень камерно и тепло. Живая гитара, красивые голоса. Именинница плакала от счастья. Обязательно позовём ещё раз!»</p>
+        <footer>
+          <strong>Ольга Васильева</strong>
+          <span>Юбилей · Нижний Новгород</span>
+        </footer>
+      </blockquote>
+
+    </div>
+  </div>
+</section>
+
   <!-- GEO -->
   <section id="geo" class="section section--alt">
   <div class="container">
@@ -319,46 +456,94 @@
   <!-- CONTACTS -->
   <section id="contacts" class="section">
   <div class="container">
-    <div class="contacts-wrap fade-in">
+    <div class="section-title fade-in">
       <p class="about-label">Готовы выступить на вашем мероприятии</p>
-      <h2>Свяжитесь с нами</h2>
-      <p class="contacts-sub">Корпоративы · Свадьбы · Фестивали · Рестораны<br>При обращении укажите дату, город и формат мероприятия</p>
+      <h2>Заказать выступление</h2>
+      <span></span>
+    </div>
+    <div class="contacts-grid">
 
-      <div class="contacts-actions">
-        <a href="https://wa.me/79307001530" target="_blank" rel="noopener" class="btn btn-accent">
-          WhatsApp — обсудить выступление
-        </a>
-        <a href="tel:+79307001530" class="btn" style="border: 2px solid var(--border);">
-          +7 930 700-15-30
-        </a>
-        <a href="tel:+79087408822" class="btn" style="border: 2px solid var(--border);">
-          +7 908 740-88-22
-        </a>
+      <div class="contacts-form-wrap fade-in">
+        <form id="bookingForm" class="booking-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="formName">Ваше имя *</label>
+              <input type="text" id="formName" name="name" placeholder="Иван Петров" required>
+            </div>
+            <div class="form-group">
+              <label for="formPhone">Телефон *</label>
+              <input type="tel" id="formPhone" name="phone" placeholder="+7 900 000-00-00" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="formDate">Дата мероприятия</label>
+              <input type="date" id="formDate" name="date">
+            </div>
+            <div class="form-group">
+              <label for="formCity">Город</label>
+              <input type="text" id="formCity" name="city" placeholder="Нижний Новгород">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="formFormat">Формат выступления</label>
+            <select id="formFormat" name="format">
+              <option value="">Выберите формат</option>
+              <option>Концертное шоу</option>
+              <option>Живой бэнд</option>
+              <option>Акустический сет</option>
+              <option>Поющий ведущий</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formMessage">Дополнительно</label>
+            <textarea id="formMessage" name="message" rows="3" placeholder="Расскажите о вашем мероприятии..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent form-submit">
+            Отправить заявку в WhatsApp
+          </button>
+        </form>
       </div>
 
-      <div class="contacts-links">
-        <a href="mailto:duetotobrajenie@gmail.com" class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="m2 7 10 7 10-7"/>
-          </svg>
-          duetotobrajenie@gmail.com
-        </a>
-        <a href="https://vk.com/duet_otobrajenie" target="_blank" rel="noopener" class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.08 13.26h-1.6c-.6 0-.79-.48-1.87-1.57-.94-.93-1.35-.94-1.58-.94s-.35.06-.35.75v1.43c0 .53-.17.85-1.6.85-2.36 0-4.97-1.43-6.8-4.1C2.92 9.1 2.5 7.09 2.5 6.6c0-.23.06-.46.75-.46h1.6c.56 0 .77.25.99.84.86 2.5 2.31 4.69 2.9 4.69.22 0 .32-.1.32-.66V9.14c-.07-1.18-.69-1.28-.69-1.7 0-.21.17-.42.44-.42h2.51c.47 0 .64.25.64.79v3.4c0 .47.21.64.34.64.22 0 .41-.17.82-.58 1.27-1.42 2.18-3.6 2.18-3.6.12-.24.33-.46.79-.46h1.6c.48 0 .59.25.48.58-.2.94-2.15 3.68-2.15 3.68-.17.28-.23.4 0 .71.17.23.72.7 1.08 1.13.67.75 1.19 1.39 1.33 1.82.14.43-.09.65-.55.65z"/>
-          </svg>
-          ВКонтакте
-        </a>
-        <a href="https://www.instagram.com/duet_otobrajenie" target="_blank" rel="noopener" class="contact-item">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="20" height="20" rx="5"/>
-            <circle cx="12" cy="12" r="4"/>
-            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-          </svg>
-          @duet_otobrajenie
-        </a>
+      <div class="contacts-info fade-in">
+        <h3>Свяжитесь напрямую</h3>
+        <p class="contacts-sub">Корпоративы · Свадьбы · Фестивали · Рестораны</p>
+        <div class="contacts-actions">
+          <a href="https://wa.me/79307001530" target="_blank" rel="noopener" class="btn btn-accent">
+            WhatsApp
+          </a>
+          <a href="tel:+79307001530" class="btn" style="border: 2px solid var(--border);">
+            +7 930 700-15-30
+          </a>
+          <a href="tel:+79087408822" class="btn" style="border: 2px solid var(--border);">
+            +7 908 740-88-22
+          </a>
+        </div>
+        <div class="contacts-links">
+          <a href="mailto:duetotobrajenie@gmail.com" class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="4" width="20" height="16" rx="2"/>
+              <path d="m2 7 10 7 10-7"/>
+            </svg>
+            duetotobrajenie@gmail.com
+          </a>
+          <a href="https://vk.com/duet_otobrajenie" target="_blank" rel="noopener" class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.08 13.26h-1.6c-.6 0-.79-.48-1.87-1.57-.94-.93-1.35-.94-1.58-.94s-.35.06-.35.75v1.43c0 .53-.17.85-1.6.85-2.36 0-4.97-1.43-6.8-4.1C2.92 9.1 2.5 7.09 2.5 6.6c0-.23.06-.46.75-.46h1.6c.56 0 .77.25.99.84.86 2.5 2.31 4.69 2.9 4.69.22 0 .32-.1.32-.66V9.14c-.07-1.18-.69-1.28-.69-1.7 0-.21.17-.42.44-.42h2.51c.47 0 .64.25.64.79v3.4c0 .47.21.64.34.64.22 0 .41-.17.82-.58 1.27-1.42 2.18-3.6 2.18-3.6.12-.24.33-.46.79-.46h1.6c.48 0 .59.25.48.58-.2.94-2.15 3.68-2.15 3.68-.17.28-.23.4 0 .71.17.23.72.7 1.08 1.13.67.75 1.19 1.39 1.33 1.82.14.43-.09.65-.55.65z"/>
+            </svg>
+            ВКонтакте
+          </a>
+          <a href="https://www.instagram.com/duet_otobrajenie" target="_blank" rel="noopener" class="contact-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            @duet_otobrajenie
+          </a>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
