@@ -378,7 +378,7 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   color: var(--accent); opacity: 0.5;
   min-width: 36px;
 }
-.track-info { flex: 1; }
+.track-info { flex: 1; min-width: 0; }
 .track-title {
   display: block;
   font-size: 1rem; font-weight: 600;
@@ -411,7 +411,6 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   flex-shrink: 0;
   width: 36px; height: 36px;
   display: flex; align-items: center; justify-content: center;
-  align-self: flex-start;
   color: var(--text-muted);
   border-radius: 6px;
   transition: color 0.2s, background 0.2s;
@@ -1035,11 +1034,12 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   .video-grid .video-card:last-child { max-width: 100%; }
 
   .track-embed { display: none; }
+  .track-card { flex-wrap: wrap; }
   .track-ext {
-    width: auto; height: auto; background: none;
+    width: 100%; height: auto; background: none;
     border: 1.5px solid var(--accent); border-radius: 8px;
     color: var(--accent); padding: 10px 16px;
-    align-self: center; gap: 8px;
+    justify-content: center; gap: 8px;
     font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em;
   }
   .track-ext:hover { background: var(--accent-light); }
