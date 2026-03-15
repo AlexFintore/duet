@@ -397,6 +397,10 @@ function toggleContact(e) {
   popup.classList.toggle('open', opening);
   if (float) float.classList.toggle('open', opening);
 }
+(function() {
+  var btn = document.getElementById('contactBtn');
+  if (btn) btn.addEventListener('click', toggleContact);
+})();
 document.addEventListener('click', function(e) {
   var float = document.getElementById('contactFloat');
   var popup = document.getElementById('contactPopup');
