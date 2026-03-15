@@ -388,8 +388,7 @@ const REPERTOIRE = [
 })();
 
 // ===== CONTACT FLOAT =====
-function toggleContact(e) {
-  if (e) e.stopPropagation();
+function toggleContact() {
   var popup = document.getElementById('contactPopup');
   var float = document.getElementById('contactFloat');
   if (!popup) return;
@@ -397,18 +396,14 @@ function toggleContact(e) {
   popup.classList.toggle('open', opening);
   if (float) float.classList.toggle('open', opening);
 }
-(function() {
-  var btn = document.getElementById('contactBtn');
-  if (btn) btn.addEventListener('click', toggleContact);
-})();
 document.addEventListener('click', function(e) {
   var float = document.getElementById('contactFloat');
   var popup = document.getElementById('contactPopup');
-  if (float && popup && !float.contains(e.target)) {
+  if (float && popup && popup.classList.contains('open') && !float.contains(e.target)) {
     popup.classList.remove('open');
     float.classList.remove('open');
   }
-});
+}, true);
 
 // ===== AVAILABILITY =====
 const BUSY_DATES = {
@@ -454,60 +449,24 @@ if (availEl) {
   }
 }
 
-// ===== QUIZ STEPPER =====
-(function() {
-  let quizEventType = '';
-  let currentStep = 1;
+// ===== CONTACT QUICK FORM =====
+document.getElementById('contactQuickForm')?.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const type  = document.getElementById('qfEventType')?.value;
+  const date  = document.getElementById('qfDate')?.value;
+  const city  = document.getElementById('qfCity')?.value.trim();
+  const phone = document.getElementById('qfPhone')?.value.trim();
+  const note  = document.getElementById('qfNote')?.value.trim();
 
-  const steps = [
-    document.getElementById('quizStep1'),
-    document.getElementById('quizStep2'),
-    document.getElementById('quizStep3'),
-  ];
-  const progressBar = document.getElementById('quizProgressBar');
+  let text = `Заявка на выступление дуэта «Отображение»\n\n`;
+  if (type)  text += `Мероприятие: ${type}\n`;
+  if (date)  text += `Дата: ${new Date(date).toLocaleDateString('ru-RU')}\n`;
+  if (city)  text += `Город: ${city}\n`;
+  if (phone) text += `Телефон: ${phone}\n`;
+  if (note)  text += `\nПожелания: ${note}`;
 
-  if (!steps[0]) return;
-
-  function goToStep(n) {
-    steps.forEach((s, i) => s && s.classList.toggle('active', i === n - 1));
-    if (progressBar) progressBar.style.width = (n / 3 * 100) + '%';
-    currentStep = n;
-  }
-
-  // Step 1: click option → advance
-  steps[0]?.querySelectorAll('.quiz-opt').forEach(btn => {
-    btn.addEventListener('click', function() {
-      steps[0].querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
-      this.classList.add('selected');
-      quizEventType = this.dataset.val;
-      setTimeout(() => goToStep(2), 200);
-    });
-  });
-
-  // Step 2: nav
-  document.getElementById('quizBack2')?.addEventListener('click', () => goToStep(1));
-  document.getElementById('quizNext2')?.addEventListener('click', () => goToStep(3));
-
-  // Step 3: nav
-  document.getElementById('quizBack3')?.addEventListener('click', () => goToStep(2));
-
-  // Submit
-  document.getElementById('quizSubmit')?.addEventListener('click', function() {
-    const date  = document.getElementById('quizDate')?.value;
-    const city  = document.getElementById('quizCity')?.value.trim();
-    const note  = document.getElementById('quizNote')?.value.trim();
-    const checks = [...(document.querySelectorAll('#quizStep3 .quiz-check-item input:checked'))].map(c => c.value);
-
-    let text = `Заявка на выступление дуэта «Отображение»\n\n`;
-    text += `Мероприятие: ${quizEventType || '—'}\n`;
-    if (date) text += `Дата: ${new Date(date).toLocaleDateString('ru-RU')}\n`;
-    if (city) text += `Город: ${city}\n`;
-    if (checks.length) text += `Важно: ${checks.join(', ')}\n`;
-    if (note) text += `\n${note}`;
-
-    window.open(`https://wa.me/79307001530?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-  });
-})();
+  window.open(`https://wa.me/79307001530?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+});
 
 // ===== SWIPE FOR PHOTO MODAL =====
 (function() {
