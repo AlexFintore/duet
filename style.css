@@ -400,7 +400,8 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
 .track-embed {
   margin-top: 10px;
   overflow: hidden;
-  contain: layout;
+  contain: layout paint;
+  border-radius: 6px;
 }
 .track-embed iframe {
   display: block;
