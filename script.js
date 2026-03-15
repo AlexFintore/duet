@@ -389,17 +389,23 @@ const REPERTOIRE = [
 
 // ===== CONTACT FLOAT =====
 (function() {
-  const float = document.getElementById('contactFloat');
-  const btn = document.getElementById('contactMain');
-  if (!btn) return;
+  var float = document.getElementById('contactFloat');
+  var btn = document.getElementById('contactBtn');
+  var popup = document.getElementById('contactPopup');
+  if (!btn || !popup || !float) return;
 
-  btn.addEventListener('click', e => {
+  btn.addEventListener('click', function(e) {
     e.stopPropagation();
-    float.classList.toggle('open');
+    var isOpen = popup.classList.contains('open');
+    popup.classList.toggle('open', !isOpen);
+    float.classList.toggle('open', !isOpen);
   });
 
-  document.addEventListener('click', e => {
-    if (!float.contains(e.target)) float.classList.remove('open');
+  document.addEventListener('click', function(e) {
+    if (!float.contains(e.target)) {
+      popup.classList.remove('open');
+      float.classList.remove('open');
+    }
   });
 })()
 
