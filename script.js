@@ -368,16 +368,19 @@ const REPERTOIRE = [
 })()
 
 // ===== SINGLE TRACK PLAY =====
-document.querySelectorAll('.track-embed').forEach(function(embed) {
-  embed.addEventListener('click', function() {
+// When user clicks inside an iframe, parent window fires blur and
+// document.activeElement becomes that iframe — only way to detect cross-origin clicks.
+window.addEventListener('blur', function() {
+  const active = document.activeElement;
+  if (active && active.tagName === 'IFRAME' && active.closest('.track-embed')) {
     document.querySelectorAll('.track-embed iframe').forEach(function(iframe) {
-      if (!embed.contains(iframe)) {
+      if (iframe !== active) {
         const src = iframe.src;
         iframe.removeAttribute('src');
         requestAnimationFrame(function() { iframe.src = src; });
       }
     });
-  }, true);
+  }
 });
 
 // ===== CONTACT FLOAT =====
