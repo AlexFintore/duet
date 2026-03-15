@@ -450,8 +450,7 @@ if (availEl) {
 }
 
 // ===== CONTACT QUICK FORM =====
-document.getElementById('contactQuickForm')?.addEventListener('submit', function(e) {
-  e.preventDefault();
+function submitContactForm() {
   const type  = document.getElementById('qfEventType')?.value;
   const date  = document.getElementById('qfDate')?.value;
   const city  = document.getElementById('qfCity')?.value.trim();
@@ -466,7 +465,7 @@ document.getElementById('contactQuickForm')?.addEventListener('submit', function
   if (note)  text += `\nПожелания: ${note}`;
 
   window.open(`https://wa.me/79307001530?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
-});
+}
 
 // ===== SWIPE FOR PHOTO MODAL =====
 (function() {
