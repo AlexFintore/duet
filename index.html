@@ -123,7 +123,10 @@
   <!-- HERO -->
   <section id="hero">
   <div class="hero-bg">
-    <img src="images/hero.jpg" alt="Дуэт Отображение" class="hero-img" id="heroImg" fetchpriority="high">
+    <picture>
+      <source media="(max-width: 768px)" srcset="images/about.jpg">
+      <img src="images/hero.jpg" alt="Дуэт Отображение" class="hero-img" id="heroImg" fetchpriority="high">
+    </picture>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content container">
@@ -148,7 +151,10 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-photo fade-in">
-        <img src="images/about.jpg" alt="Сергей Зорин и Рамиля Минажетдинова — дуэт Отображение">
+        <picture>
+          <source media="(max-width: 768px)" srcset="images/hero.jpg">
+          <img src="images/about.jpg" alt="Сергей Зорин и Рамиля Минажетдинова — дуэт Отображение">
+        </picture>
       </div>
       <div class="about-text fade-in">
         <p class="about-label">О нас</p>
@@ -406,7 +412,7 @@
     <div class="video-grid">
       <a class="video-card video-thumb fade-in" href="https://www.youtube.com/watch?v=3jHa2VUlal4" target="_blank" rel="noopener" aria-label="Смотреть «Незаконченный роман» на YouTube">
         <div class="video-wrap">
-          <img src="https://img.youtube.com/vi/3jHa2VUlal4/maxresdefault.jpg" alt="Дуэт Отображение — Незаконченный роман, Привет Андрей Россия-1" loading="lazy">
+          <img src="https://img.youtube.com/vi/3jHa2VUlal4/maxresdefault.jpg" alt="Дуэт Отображение — Незаконченный роман, Привет Андрей Россия-1" loading="lazy" onerror="this.src='https://img.youtube.com/vi/3jHa2VUlal4/hqdefault.jpg'">
           <div class="video-play">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </div>
@@ -415,7 +421,7 @@
       </a>
       <a class="video-card video-thumb fade-in" href="https://www.youtube.com/watch?v=OVKxd3QgjMg" target="_blank" rel="noopener" aria-label="Смотреть «Заходи ко мне во сне» на YouTube">
         <div class="video-wrap">
-          <img src="https://img.youtube.com/vi/OVKxd3QgjMg/maxresdefault.jpg" alt="Дуэт Отображение — Заходи ко мне во сне" loading="lazy">
+          <img src="https://img.youtube.com/vi/OVKxd3QgjMg/maxresdefault.jpg" alt="Дуэт Отображение — Заходи ко мне во сне" loading="lazy" onerror="this.src='https://img.youtube.com/vi/OVKxd3QgjMg/hqdefault.jpg'">
           <div class="video-play">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </div>
