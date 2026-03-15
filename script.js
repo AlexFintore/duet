@@ -320,9 +320,7 @@ const REPERTOIRE = [
 
 // ===== REPERTOIRE MODAL =====
 (function() {
-  const PER_PAGE = 20;
   let currentGenre = 'all';
-  let currentPage = 1;
 
   const modal = document.getElementById('repModal');
   if (!modal) return;
@@ -333,19 +331,10 @@ const REPERTOIRE = [
 
   function render() {
     const list = getFiltered();
-    const totalPages = Math.ceil(list.length / PER_PAGE);
-    if (currentPage > totalPages) currentPage = 1;
-    const start = (currentPage - 1) * PER_PAGE;
-    const items = list.slice(start, start + PER_PAGE);
-
-    document.getElementById('repModalList').innerHTML = items.map(song =>
+    document.getElementById('repModalList').innerHTML = list.map(song =>
       `<div class="rep-modal-item"><span class="rep-title">${song.title}</span>${song.artist ? `<span class="rep-artist">${song.artist}</span>` : ''}</div>`
     ).join('');
-
     document.getElementById('repModalCount').textContent = `${list.length} песен`;
-    document.getElementById('repPageInfo').textContent = `${currentPage} / ${totalPages}`;
-    document.getElementById('repPrevPage').disabled = currentPage === 1;
-    document.getElementById('repNextPage').disabled = currentPage === totalPages;
   }
 
   function open() {
@@ -363,34 +352,34 @@ const REPERTOIRE = [
   document.getElementById('repModalClose')?.addEventListener('click', close);
   document.getElementById('repModalOverlay')?.addEventListener('click', close);
 
-  document.getElementById('repPrevPage')?.addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      render();
-      document.getElementById('repModalList').scrollTop = 0;
-    }
-  });
-
-  document.getElementById('repNextPage')?.addEventListener('click', () => {
-    if (currentPage < Math.ceil(getFiltered().length / PER_PAGE)) {
-      currentPage++;
-      render();
-      document.getElementById('repModalList').scrollTop = 0;
-    }
-  });
-
   document.getElementById('repModalFilters')?.querySelectorAll('.rep-filter').forEach(btn => {
     btn.addEventListener('click', function() {
       document.querySelectorAll('#repModalFilters .rep-filter').forEach(b => b.classList.remove('active'));
       this.classList.add('active');
       currentGenre = this.dataset.genre;
-      currentPage = 1;
+      document.getElementById('repModalList').scrollTop = 0;
       render();
     });
   });
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && modal.classList.contains('active')) close();
+  });
+})()
+
+// ===== CONTACT FLOAT =====
+(function() {
+  const float = document.getElementById('contactFloat');
+  const btn = document.getElementById('contactMain');
+  if (!btn) return;
+
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    float.classList.toggle('open');
+  });
+
+  document.addEventListener('click', e => {
+    if (!float.contains(e.target)) float.classList.remove('open');
   });
 })()
 
