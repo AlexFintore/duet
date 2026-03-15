@@ -388,26 +388,23 @@ const REPERTOIRE = [
 })();
 
 // ===== CONTACT FLOAT =====
-(function() {
-  var float = document.getElementById('contactFloat');
-  var btn = document.getElementById('contactBtn');
+function toggleContact(e) {
+  if (e) e.stopPropagation();
   var popup = document.getElementById('contactPopup');
-  if (!btn || !popup || !float) return;
-
-  btn.addEventListener('click', function(e) {
-    e.stopPropagation();
-    var isOpen = popup.classList.contains('open');
-    popup.classList.toggle('open', !isOpen);
-    float.classList.toggle('open', !isOpen);
-  });
-
-  document.addEventListener('click', function(e) {
-    if (!float.contains(e.target)) {
-      popup.classList.remove('open');
-      float.classList.remove('open');
-    }
-  });
-})()
+  var float = document.getElementById('contactFloat');
+  if (!popup) return;
+  var opening = !popup.classList.contains('open');
+  popup.classList.toggle('open', opening);
+  if (float) float.classList.toggle('open', opening);
+}
+document.addEventListener('click', function(e) {
+  var float = document.getElementById('contactFloat');
+  var popup = document.getElementById('contactPopup');
+  if (float && popup && !float.contains(e.target)) {
+    popup.classList.remove('open');
+    float.classList.remove('open');
+  }
+});
 
 // ===== AVAILABILITY =====
 const BUSY_DATES = {
