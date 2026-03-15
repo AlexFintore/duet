@@ -368,20 +368,24 @@ const REPERTOIRE = [
 })()
 
 // ===== SINGLE TRACK PLAY =====
-// When user clicks inside an iframe, parent window fires blur and
-// document.activeElement becomes that iframe — only way to detect cross-origin clicks.
-window.addEventListener('blur', function() {
-  const active = document.activeElement;
-  if (active && active.tagName === 'IFRAME' && active.closest('.track-embed')) {
-    document.querySelectorAll('.track-embed iframe').forEach(function(iframe) {
-      if (iframe !== active) {
-        const src = iframe.src;
-        iframe.removeAttribute('src');
-        requestAnimationFrame(function() { iframe.src = src; });
-      }
-    });
-  }
-});
+// Polling: when user clicks inside an iframe it becomes document.activeElement.
+// We detect the change and reset all other track iframes.
+(function() {
+  var activeIframe = null;
+  setInterval(function() {
+    var el = document.activeElement;
+    if (el && el.tagName === 'IFRAME' && el.closest('.track-embed') && el !== activeIframe) {
+      activeIframe = el;
+      document.querySelectorAll('.track-embed iframe').forEach(function(iframe) {
+        if (iframe !== el) {
+          var src = iframe.src;
+          iframe.src = '';
+          setTimeout(function() { iframe.src = src; }, 150);
+        }
+      });
+    }
+  }, 250);
+})();
 
 // ===== CONTACT FLOAT =====
 (function() {
