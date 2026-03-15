@@ -367,6 +367,19 @@ const REPERTOIRE = [
   });
 })()
 
+// ===== SINGLE TRACK PLAY =====
+document.querySelectorAll('.track-embed').forEach(function(embed) {
+  embed.addEventListener('click', function() {
+    document.querySelectorAll('.track-embed iframe').forEach(function(iframe) {
+      if (!embed.contains(iframe)) {
+        const src = iframe.src;
+        iframe.removeAttribute('src');
+        requestAnimationFrame(function() { iframe.src = src; });
+      }
+    });
+  }, true);
+});
+
 // ===== CONTACT FLOAT =====
 (function() {
   const float = document.getElementById('contactFloat');
