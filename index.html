@@ -87,7 +87,7 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
-    img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}a{color:inherit;text-decoration:none}
     h1,h2,h3{font-family:var(--font-heading);line-height:1.2}
     h1{font-size:clamp(2.4rem,6vw,4rem)}h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:16px}h3{font-size:1.2rem;margin-bottom:8px}
     .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
@@ -195,7 +195,7 @@
       <source media="(max-width: 768px)" srcset="images/about.webp" type="image/webp">
       <source media="(max-width: 768px)" srcset="images/about.jpg">
       <source srcset="images/hero.webp" type="image/webp">
-      <img src="images/hero.jpg" alt="Дуэт Отображение" class="hero-img" id="heroImg" fetchpriority="high" width="1400" height="780">
+      <img src="images/hero.jpg" alt="Дуэт Отображение" class="hero-img" id="heroImg" fetchpriority="high">
     </picture>
   </div>
   <div class="hero-overlay"></div>
@@ -225,7 +225,7 @@
           <source media="(max-width: 768px)" srcset="images/hero.webp" type="image/webp">
           <source media="(max-width: 768px)" srcset="images/hero.jpg">
           <source srcset="images/about.webp" type="image/webp">
-          <img src="images/about.jpg" alt="Сергей Зорин и Рамиля Минажетдинова — дуэт Отображение" loading="lazy" width="1200" height="1814">
+          <img src="images/about.jpg" alt="Сергей Зорин и Рамиля Минажетдинова — дуэт Отображение" loading="lazy">
         </picture>
       </div>
       <div class="about-text fade-in">
