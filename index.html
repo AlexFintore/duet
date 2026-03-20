@@ -72,9 +72,14 @@
   }
   </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+  <!-- Preload hero images (critical LCP) -->
+  <link rel="preload" as="image" href="images/hero.webp" media="(min-width: 769px)" fetchpriority="high" type="image/webp">
+  <link rel="preload" as="image" href="images/about.webp" media="(max-width: 768px)" fetchpriority="high" type="image/webp">
+  <!-- Fonts: preconnect + non-render-blocking load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"></noscript>
   <link rel="stylesheet" href="style.css">
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -124,7 +129,9 @@
   <section id="hero">
   <div class="hero-bg">
     <picture>
+      <source media="(max-width: 768px)" srcset="images/about.webp" type="image/webp">
       <source media="(max-width: 768px)" srcset="images/about.jpg">
+      <source srcset="images/hero.webp" type="image/webp">
       <img src="images/hero.jpg" alt="Дуэт Отображение" class="hero-img" id="heroImg" fetchpriority="high">
     </picture>
   </div>
@@ -152,8 +159,10 @@
     <div class="about-grid">
       <div class="about-photo fade-in">
         <picture>
+          <source media="(max-width: 768px)" srcset="images/hero.webp" type="image/webp">
           <source media="(max-width: 768px)" srcset="images/hero.jpg">
-          <img src="images/about.jpg" alt="Сергей Зорин и Рамиля Минажетдинова — дуэт Отображение">
+          <source srcset="images/about.webp" type="image/webp">
+          <img src="images/about.jpg" alt="Сергей Зорин и Рамиля Минажетдинова — дуэт Отображение" loading="lazy">
         </picture>
       </div>
       <div class="about-text fade-in">
@@ -412,7 +421,10 @@
     <div class="video-grid">
       <a class="video-card video-thumb fade-in" href="https://www.youtube.com/watch?v=3jHa2VUlal4" target="_blank" rel="noopener" aria-label="Смотреть «Незаконченный роман» на YouTube">
         <div class="video-wrap">
-          <img src="images/video_preview_1.jpg" alt="Дуэт Отображение — Незаконченный роман, Привет Андрей Россия-1" loading="lazy">
+          <picture>
+            <source srcset="images/video_preview_1.webp" type="image/webp">
+            <img src="images/video_preview_1.jpg" alt="Дуэт Отображение — Незаконченный роман, Привет Андрей Россия-1" loading="lazy">
+          </picture>
           <div class="video-play">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </div>
@@ -421,7 +433,10 @@
       </a>
       <a class="video-card video-thumb fade-in" href="https://www.youtube.com/watch?v=OVKxd3QgjMg" target="_blank" rel="noopener" aria-label="Смотреть «Заходи ко мне во сне» на YouTube">
         <div class="video-wrap">
-          <img src="images/video_preview_2.jpg" alt="Дуэт Отображение — Заходи ко мне во сне" loading="lazy">
+          <picture>
+            <source srcset="images/video_preview_2.webp" type="image/webp">
+            <img src="images/video_preview_2.jpg" alt="Дуэт Отображение — Заходи ко мне во сне" loading="lazy">
+          </picture>
           <div class="video-play">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </div>
@@ -430,7 +445,10 @@
       </a>
       <a class="video-card video-thumb fade-in" href="https://www.youtube.com/watch?v=95rEzI1gNL0" target="_blank" rel="noopener" aria-label="Смотреть интервью дуэта Отображение">
         <div class="video-wrap">
-          <img src="images/video_preview_3.jpg" alt="Дуэт Отображение — интервью" loading="lazy">
+          <picture>
+            <source srcset="images/video_preview_3.webp" type="image/webp">
+            <img src="images/video_preview_3.jpg" alt="Дуэт Отображение — интервью" loading="lazy">
+          </picture>
           <div class="video-play">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
           </div>
@@ -768,14 +786,17 @@
     </button>
   </div>
 
-  <script src="script.js?v=18"></script>
+  <script src="script.js?v=19" defer></script>
 
   <!-- Concert popup: visible until April 19, 2026 -->
   <div id="concert-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:9999; align-items:center; justify-content:center; padding:16px;">
     <div style="position:relative; max-width:420px; width:100%;">
       <button onclick="closeConcertModal()" aria-label="Закрыть" style="position:absolute; top:-14px; right:-14px; width:32px; height:32px; border-radius:50%; border:none; background:#fff; color:#111; font-size:18px; font-weight:700; cursor:pointer; line-height:1; z-index:1; box-shadow:0 2px 8px rgba(0,0,0,0.4);">✕</button>
       <a href="https://duetotobrajenie.ru/" target="_blank" rel="noopener">
-        <img src="images/concert-april.jpg" alt="Концерт дуэта Отображение 19 апреля в ресторане МиМиНо" style="width:100%; border-radius:8px; display:block; box-shadow:0 4px 24px rgba(0,0,0,0.5);">
+        <picture>
+          <source srcset="images/concert-april.webp" type="image/webp">
+          <img src="images/concert-april.jpg" alt="Концерт дуэта Отображение 19 апреля в ресторане МиМиНо" style="width:100%; border-radius:8px; display:block; box-shadow:0 4px 24px rgba(0,0,0,0.5);">
+        </picture>
       </a>
     </div>
   </div>
