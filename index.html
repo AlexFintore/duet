@@ -132,6 +132,12 @@
     .hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.6);animation:bounce 2s infinite}
     @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
     @media(prefers-reduced-motion:reduce){.hero-scroll{animation:none}.fade-in{transition:none}}
+    /* Track embed — must be present before iframe loads */
+    .player-grid{display:flex;flex-direction:column;gap:12px;max-width:720px;margin:0 auto}
+    .track-card{display:flex;align-items:center;gap:20px;background:var(--bg-card);border-radius:16px;padding:20px 24px;box-shadow:0 2px 16px var(--shadow);border-left:3px solid transparent;transition:transform .2s ease,box-shadow .2s ease,border-left-color .25s ease}
+    .track-info{flex:1}
+    .track-embed{margin-top:10px;overflow:hidden;contain:layout paint;border-radius:6px}
+    .track-embed iframe{display:block;border-radius:6px;border:none}
   </style>
   <!-- Full CSS async — non-render-blocking -->
   <link rel="preload" href="style.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
