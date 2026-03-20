@@ -40,6 +40,7 @@ body::after {
   background-size: 180px;
   opacity: 0.032;
   animation: grain 9s steps(8) infinite;
+  will-change: transform;
 }
 @keyframes grain {
   0%   { transform: translate(0, 0); }
@@ -144,6 +145,7 @@ h3 { font-size: 1.2rem; margin-bottom: 8px; }
   object-fit: cover; object-position: center top;
   opacity: 0; transition: opacity 1.2s ease;
   transform-origin: center center;
+  will-change: transform, opacity;
 }
 .hero-img.loaded {
   opacity: 1;

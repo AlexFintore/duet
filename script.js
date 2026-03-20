@@ -1,3 +1,20 @@
+// ===== LAZY YANDEX MUSIC IFRAMES =====
+// Iframes load ~350KB JS each — defer until section enters viewport
+(function() {
+  const iframes = document.querySelectorAll('.track-embed iframe[data-src]');
+  if (!iframes.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const iframe = entry.target;
+        iframe.src = iframe.dataset.src;
+        observer.unobserve(iframe);
+      }
+    });
+  }, { rootMargin: '200px' });
+  iframes.forEach(iframe => observer.observe(iframe));
+})();
+
 // ===== HEADER SCROLL =====
 const header = document.getElementById('header');
 if (header) {
@@ -129,6 +146,8 @@ if (galleryTrack) {
       img.src = src;
       img.alt = 'Дуэт Отображение — фотография';
       img.loading = 'lazy';
+      img.width = 400;
+      img.height = 300;
       div.appendChild(img);
       frag.appendChild(div);
     });
