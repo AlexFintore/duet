@@ -38,11 +38,7 @@ if (fadeEls.length > 0) {
   fadeEls.forEach(el => observer.observe(el));
 }
 
-// ===== DARK THEME =====
-(function() {
-  const saved = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', saved);
-})();
+// ===== DARK THEME (detection moved to inline <head> script) =====
 document.getElementById('themeToggle')?.addEventListener('click', function() {
   const current = document.documentElement.getAttribute('data-theme');
   const next = current === 'dark' ? 'light' : 'dark';
@@ -123,17 +119,26 @@ const galleryTrack = document.getElementById('galleryTrack');
 const PHOTOS = Array.from({length: 33}, (_, i) => `photo/photo_${i + 1}_2026-03-14_14-37-30.jpg`);
 
 if (galleryTrack) {
-  [...PHOTOS, ...PHOTOS].forEach((src, idx) => {
-    const div = document.createElement('div');
-    div.className = 'gallery-photo';
-    div.dataset.index = idx % PHOTOS.length;
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = 'Дуэт Отображение — фотография';
-    img.loading = 'lazy';
-    div.appendChild(img);
-    galleryTrack.appendChild(div);
-  });
+  const buildGallery = () => {
+    const frag = document.createDocumentFragment();
+    [...PHOTOS, ...PHOTOS].forEach((src, idx) => {
+      const div = document.createElement('div');
+      div.className = 'gallery-photo';
+      div.dataset.index = idx % PHOTOS.length;
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Дуэт Отображение — фотография';
+      img.loading = 'lazy';
+      div.appendChild(img);
+      frag.appendChild(div);
+    });
+    galleryTrack.appendChild(frag);
+  };
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(buildGallery, { timeout: 2000 });
+  } else {
+    setTimeout(buildGallery, 200);
+  }
 }
 
 // ===== PHOTO MODAL =====
@@ -415,37 +420,47 @@ const MONTH_NAMES = ['Январь','Февраль','Март','Апрель','
 
 const availEl = document.getElementById('availMonths');
 if (availEl) {
-  const now = new Date();
-  for (let m = 0; m < 3; m++) {
-    const d = new Date(now.getFullYear(), now.getMonth() + m, 1);
-    const year = d.getFullYear();
-    const month = d.getMonth();
-    const key = `${year}-${String(month + 1).padStart(2, '0')}`;
-    const busySet = new Set(BUSY_DATES[key] || []);
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const firstDay = (new Date(year, month, 1).getDay() + 6) % 7; // Mon=0
-    const today = now.getDate();
+  const buildCalendar = () => {
+    const now = new Date();
+    const frag = document.createDocumentFragment();
+    for (let m = 0; m < 3; m++) {
+      const d = new Date(now.getFullYear(), now.getMonth() + m, 1);
+      const year = d.getFullYear();
+      const month = d.getMonth();
+      const key = `${year}-${String(month + 1).padStart(2, '0')}`;
+      const busySet = new Set(BUSY_DATES[key] || []);
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const firstDay = (new Date(year, month, 1).getDay() + 6) % 7;
+      const today = now.getDate();
 
-    const col = document.createElement('div');
-    col.className = 'avail-month';
-    col.innerHTML = `<div class="avail-month-name">${MONTH_NAMES[month]} ${year}</div><div class="avail-days" id="days-${key}"></div>`;
-    availEl.appendChild(col);
+      const col = document.createElement('div');
+      col.className = 'avail-month';
+      col.innerHTML = `<div class="avail-month-name">${MONTH_NAMES[month]} ${year}</div><div class="avail-days" id="days-${key}"></div>`;
+      const grid = col.querySelector('.avail-days');
 
-    const grid = col.querySelector('.avail-days');
-    // Empty cells before first day
-    for (let i = 0; i < firstDay; i++) {
-      const empty = document.createElement('div');
-      empty.className = 'avail-day';
-      grid.appendChild(empty);
+      const dayFrag = document.createDocumentFragment();
+      for (let i = 0; i < firstDay; i++) {
+        const empty = document.createElement('div');
+        empty.className = 'avail-day';
+        dayFrag.appendChild(empty);
+      }
+      for (let day = 1; day <= daysInMonth; day++) {
+        const cell = document.createElement('div');
+        const isPast = m === 0 && day < today;
+        const isBusy = busySet.has(day);
+        cell.className = 'avail-day' + (isPast ? ' avail-day--past' : isBusy ? ' avail-day--busy' : ' avail-day--free');
+        cell.textContent = day;
+        dayFrag.appendChild(cell);
+      }
+      grid.appendChild(dayFrag);
+      frag.appendChild(col);
     }
-    for (let day = 1; day <= daysInMonth; day++) {
-      const cell = document.createElement('div');
-      const isPast = m === 0 && day < today;
-      const isBusy = busySet.has(day);
-      cell.className = 'avail-day' + (isPast ? ' avail-day--past' : isBusy ? ' avail-day--busy' : ' avail-day--free');
-      cell.textContent = day;
-      grid.appendChild(cell);
-    }
+    availEl.appendChild(frag);
+  };
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(buildCalendar, { timeout: 3000 });
+  } else {
+    setTimeout(buildCalendar, 300);
   }
 }
 
